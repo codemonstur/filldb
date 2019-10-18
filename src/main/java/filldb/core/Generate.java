@@ -101,25 +101,14 @@ public enum Generate {;
     private static ValueSetter selectGenerator(final Connection connection, final List<ValueGenerator> dataGenerators
             , final List<ValueGenerator> typeGenerators, final Column column, final Table table, final boolean usePatterns) throws SQLException {
 
-        if (column.isForeignKey()) {
-            System.out.println("Column '" + column.name + "' in '" + table.name + "' bound to foreign key setter");
-            return newForeignKeySetter(connection, column.fk);
-        }
-        if (usePatterns && column.hasPattern()) {
-            System.out.println("Column '" + column.name + "' in '" + table.name + "' bound to pattern setter");
-            return newPatternSetter(column);
-        }
+        if (column.isForeignKey()) return newForeignKeySetter(connection, column.fk);
+        if (usePatterns && column.hasPattern()) return newPatternSetter(column);
 
         final var dataGenerator = detectGenerator(dataGenerators, column, null);
-        if (dataGenerator != null) {
-            System.out.println("Column '" + column.name + "' in '" + table.name + "' bound to " + dataGenerator.name() + " setter");
-            return dataGenerator.newValueSetter(column);
-        }
+        if (dataGenerator != null) return dataGenerator.newValueSetter(column);
+
         final var typeGenerator = detectGenerator(typeGenerators, column, null);
-        if (typeGenerator != null) {
-            System.out.println("Column '" + column.name + "' in '" + table.name + "' bound to " + typeGenerator.name() + " setter");
-            return typeGenerator.newValueSetter(column);
-        }
+        if (typeGenerator != null) return typeGenerator.newValueSetter(column);
 
         throw new SQLException("Could not find a generator for column '" + column.name +
                 "' in table '" + table.name + "' with type '" + column.dataType + "'");

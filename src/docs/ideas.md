@@ -1,6 +1,13 @@
 
 ## Future features
 
+- Support more data types;
+  tinyint, tinyblob, blob, mediumblob, smallint, boolean, mediumint, integer, decimal,
+  dec, numeric, fixed, float, double, double precision, char, binary, char byte, 
+  varbinary, tinytext, mediumtext, longtext, json, enum, set, date, time, datetime,
+  year
+- Support other databases;
+  PostgreSQL, H2, HSQL, MS SQL, Oracle, etc.
 - Other names
   - Business, Government, Movie, TV, Plant, Mineral
   - any other names
@@ -9,7 +16,7 @@
 - Other data types:
   - BIC, CountryCode, TLD, radio alphabet, IBAN, 
     Creditcard, postal code, VIN, BIN (Bank Identification Number)
-    IMEI, ISBN
+    IMEI, ISBN, latitude, longitude
 - Use more common domains than @example.com
 - Combine multiple columns
   - person name with email address

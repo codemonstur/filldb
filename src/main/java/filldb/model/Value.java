@@ -1,4 +1,4 @@
-package filldb.core;
+package filldb.model;
 
 public final class Value<T> {
     public T value;

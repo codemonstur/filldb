@@ -2,7 +2,7 @@ package filldb.generators;
 
 import com.mifmif.common.regex.Generex;
 import com.mifmif.common.regex.util.Iterator;
-import filldb.core.Value;
+import filldb.model.Value;
 import filldb.model.Column;
 
 import java.util.Arrays;
