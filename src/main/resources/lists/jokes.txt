@@ -1,0 +1,489 @@
+The sad thing about IPv6 jokes is that almost no one understands them and no one is using them yet.
+What's up with the jokes... Give it a REST, guys...
+The worst thing about  is that you get the broadcast even if you really don't give a shit!
+The best thing about proprietary protocol jokes is REDACTED.
+The bad thing about Turing machine jokes is you never can tell when they're over
+RFC1918 jokes are inside jokes
+The worst part of SSH jokes is that, even when they're not funny, you suck it up and just pretend they were anyway.
+I tried to come up with an IPv4 joke, but the good ones were all already exhausted.
+The best thing about UDP jokes is that I don't care if you get them or not.
+The worst thing about Perl jokes is that next morning you can't understand why they seemed so funny.
+My favorite are DOM XSS jokes... so subtle that most people never get them
+I don't make SQLi jokes myself, I get them FROM USERS
+The bad thing about HTML DOM jokes is that everyone has their own interpretations, so you have to tell them 9000 different ways.
+The problem with GIS jokes is that you really had to be there
+The worst part about token ring jokes is that if someone starts telling one while you are telling yours, all joking stops.
+What did the one smtp server say to the other? ... You had me at EHLO!
+The issue with IPv6 jokes is that no one is using them yet
+The awesome thing about BGP jokes is that the intended audience will likely get them, one way or another.
+The bad thing about RIP jokes is they often leave everyone near you in a stunned silence.
+Everybody loves MitM jokes. Well, everybody except Alice and Bob that is.
+The great thing about SQL transaction jokes is that once you BEGIN, you can ROLLBACK if nobody gets them.
+The SYN flood attack : "knock knock. who's there? knock knock. who's there? knock knock. who's there? ..."
+People who tell routing jokes always exceed their time-to-live.
+The problem with mutex jokes is that they're race-ist.
+The sweet thing about PXE jokes: 10.10.34.2/pxelinux.0
+The problem with Ruby jokes is they ask to not be repeated.
+Order best is tell that The you thing can about jokes BitTorrent  them in any.
+the problem with RSA jokes is, they get stolen before one can tell 'em (corrected the typo)
+I would tweet a joke about CSRF if you hadn't just done so yourself
+The problem with telling a boolean joke is that everyone wants to know if it's true or false.
+The problem with SWIFT jokes is that they can be so damn expensive if you screw them up.
+The lame thing about script kid comedy is that someone else writes all their jokes for them; they just deliver the lines.
+The great thing about BGP jokes ? Anyone can claim they are their own, all you can do is hope your neighbours like them
+The problem with git jokes is everyone has their own version.
+Every Inception joke was a TOR joke first.
+Who wants serial killers when you can have much faster parallel killers? With Centronics ports!
+IGMP joke; please retweet.
+How do you keep a UDP client in suspense?
+There's more than one way to tell a Perl joke, but only one of the ways actually is understandable.
+You won't find an IPX joke funny unless its framed correctly
+There... There is... There is nothing... There is nothing funny about path MTU detection.
+The trouble with GSM jokes is finding the right frequency in which to tell them.
+The problem with SPML jokes is that Google, Salesforce and Ping think they can create a simpler version
+Spy vs spy. RS-232 vs MI6. Who you going to call? Baud, James Baud.
+The problem with TCPIP jokes is that when I tell them, all I want is an ACK but usually get FINs and RSTs
+LPR jokes are always on the line
+ARP jokes are often gratuitous.
+Bad thing about BGP jokes is you never know if its a joke
+RAID joke are always redundant
+PPP jokes are always between two people
+NTP jokes are always on time
+ASCII jokes need no ANSI.
+Everyone gets a broadcast joke
+The problem with TCP jokes is that people keep retelling them slower until you get them.
+SLIP jokes are always told in order.
+VPN jokes are virtually private
+PHP is to slapstick as Java is to black comedy.
+WHO HAS ANY ARP JOKES?
+TTL jokes are short lived.
+CHAP jokes are difficult to tell, because you have to perform a handshake, followed by a password, before they will be accepted.
+I'd make a joke about UDP, but I don't know if anyone's actually listening...
+NNTP jokes are news to me!
+The worst thing about Tor jokes is that no one gets where you're coming from
+I tried to tell a SSL rebinding joke, but twitter just displayed the punchline...
+I was telling a WEP joke once, but everyone already knew it
+HELO I.am.an.SMTP.joke.
+The problem with NetBIOS jokes is "HI I AM A PRINTER!"
+The worst thing about endianism jokes is that .........
+Fragmentation jokes... ...are always... ...told in parts.
+Let me speak out in the open: Telnet IS a joke!
+The problem with PGP jokes is that you have to tell them to everyone individually
+The bad thing about HTTP jokes is they've jumped the Wireshark.
+The bad thing about bluetooth jokes is they can only be told to people you've paired up with.
+GOPHER
+Too many people telling jokes at a cocktail party make it hard to focus on one conversation.
+ICMP echo request called. He wants his reply back
+The best thing about SCADA jokes is that everyone gets to screw in the light bulb.
+I was promised a three way and all I got was a TCP handshake.
+The best thing about mathematical jokes is left as an exercise for the reader.
+The problem with basic jokes is 10 goto punchline error line 10 punchline not found
+Did you hear the one about the Jumbo frames?  It takes a long time to tell it.
+I hate Blind SQL injection jokes. The punchlines are always funny but they take too damn long to be delivered.
+I want to do an APL joke, but I don't have the character set. Besides, who needs 140 characters of code?
+The great thing about asynchronous jokes is you can forget all about timing. #daylate
+I used to tell this really good joke about One Time Pads. No one got it the first time but everyone got it on the 2nd go around...
+I must have heard the SDL joke told at least a hundred times now... and no one has got it right yet.
+The best thing about CSS jokes is that they are misunderstood and taken incorrectly by Internet Explorer.
+Someone told me an AppScan joke the other day but they had to restart it 9 times and they skipped over all the important parts...
+The great thing about ASLR jokes is you never know where they're going.
+The best thing about script jokes is that they start with a bang.
+The best thing about Gambas jokes is that in benchmarks it's faster to tell them vs. Python and Pearl jokes.
+The best thing about Linux jokes is that new and improved versions of them keep popping up...
+The best thing about Windows jokes is that the number of them is proportional to the number of crashes...
+The best thing about Windows Phone jokes is... wait a moment, Windows Phone IS the joke!
+The best part about WAF jokes is there are a hundred ways to tell them, and everyone is sure to get them.
+The great thing about rsync jokes is that it only tells them if you haven't heard them before.
+The punchline to this SCADA joke has been censored by the DHS.
+The good thing about OTR jokes is that you forget the punchline afterwards.
+The problem with IPV6 jokes is that they are hard to remember
+The good thing with rainbow table jokes is that you have all posible outcomes before the joke itself
+The problem with MIME type jokes is that most people don't know how to handle them.
+The great thing about CDMA jokes is that 8 people can tell them at the same time, and the audience understands all of them.
+I had a funny UDP joke to tell, but I lost it somewhere...
+When I worked at CompuServe we liked to tell ANPA jokes, but they quickly became yesterday's news.
+The problem with token ring jokes is you need to wait your turn to laugh
+The great thing about IPP jokes is that you always end up with a paper record of the joke in question.
+The great thing about Zeroconf jokes is that you can just walk up to strangers and tell them, no introduction necessary.
+The worst part about HTTP jokes is that you can never remember in which state you heard the last one.
+The best thing about packet delivery jokes is that they are best effort.
+Everyone gets snmp jokes but only some people understand them
+DHCP jokes only work when there is only one person telling them.
+The great thing about Infiniband jokes is that people can start retelling them before you've finished.
+Ping and traceroute jokes are only funny in groups
+Do you know what is funny about X25 jokes?  Absolutely nothing.
+WMS jokes let you check the joke capabilities before you hear them
+An IPv4 address space walks in to a bar, "A strong CIDR please. I'm exhausted."
+A properly implemented WMS joke lets you span today and tomorrow
+The best thing about Skype jokes is the ridiculous lengths they'll go to, to be told at all.
+The best thing about Skype jooooookkkkess iiiii                not      bu    agai         *poink*
+I've been sitting here telling IPX jokes. Just realized that none of them can get onto the Internet.
+Python jokes are usually funny, even though the format is always the same... /cc @spikelynch
+The great thing about SMTP jokes is thousands of people who don't know you will retell them to whoever you want if you ask nicely.
+The great thing about WebDAV jokes is you can tell many different versions of the same joke and people will still listen.
+OSPF jokes are nice because they are never negative.
+The great thing about IP over Avian Carrier jokes is that if your joke gets fragmented, you at least get free dinner.
+If you aren't careful @dakami will take your nice DNS joke and cram a whole extra punchline on the end.
+The worst thing about non-HTTP jokes is that no matter how good they are, nobody cares
+You can hide a whole filesystem in the time between telling a TCP joke and when people get it.
+The problem with  jokes is that they are too self-referencial.
+AT command modems are funny when ATHO <no carrier>
+The best thing about Bitcoin jokes is that they're always funnier the next time you tell them.
+SUDO lets laugh at everyone's jokes
+Multicast jokes are great, but you have to be paying attention
+The ___ thing about Microsoft jokes is ____ you need to patch them all ___ time for them ___ work.
+bittorrent jokes are only funny if you get the whole thing.
+Xanadu jokes are funny because - Wait, did you back attribute that correctly?
+The worst thing about HTML jokes is that your audience doesn't always GET it.
+Only the odd numbered ROT13 jokes have a chance of working
+ISTABU jokes are mostly funny in Finland.
+The problem with SILC jokes is VqaxMz9JY+hDkRjrYJeeDKcdknIyxVtyBo+oywA+nvJPHEBOQ1fJ36LAgEwcGchFK/HDo5InJgl/vC6vlONkgmuR1.
+Sticks and stones may break your bones, but Gamma Ray jokes can really get under your skin.
+Wikileaks jokes are only really funny after a real news outlets tells us we can laugh.
+The problem with FTP jokes is that everyone can get them.
+The problem with modbus jokes is that they don't register with everyone. But if they do you coil up with lauchter
+The funny thing about HTTP jokes is that everyone is POSTing them at the moment.
+Jokes are best when you forget to take down the postit with your password on it.
+Jokes just build and build until you either laugh or just clear the cache. +
+Twitter jokes are, oh, look at this pretty picture of a freaking whale.
+A TCP packet walks into a bar "I want a beer." Bartender responds "You want a beer?" Packet responds "I want a beer."
+IPoAC will be viable when pigs fly - which will, in turn, add to existing capacity (if the pigs are of the homing kind).
+I had an Ethernet joke, but somebody else told it at the same time.  So I exponentially backed off and tried again.
+Error 404. The requested punchline was not found in this tweet.
+The problem with XML jokes is that if they're not well formed you don't get the ending
+OSI model jokes work on so many levels.
+The best thing about  jokes is that they are  jokes:)
+I wish wed go back to a time where everybody enjoyed fingering each other.
+All the humor in a Java joke has been encapsulated and abstracted into a base library written in c.
+COBOL jokes perform varying humor
+You might not laugh at this  about ipv4-in-ipv6 encapsulation because it's an inside joke.
+My HEAD hurts because I don.t GET all the HTTP jokes y.all PUT on my timeline. I have to DELETE some of them POST-haste
+I received a Tor joke from someone. have no idea who they are though.
+ssh -D jokes just pop up where they are not expected.
+TOR jokes start and end almost anywhere.
+These networking jokes are great, but with SharePoint people you need handle the protocol a bit differently
+If you freeze a joke in RAM it will still be there when you take the computer apart.
+The worst thing about GPIB jokes is that you must *WAI for the punchline
+The problem with PtP jokes is that everyone has to decide how much to laugh themselves.
+Kickstarter jokes are all or nothing
+Nobody gets micropayment jokes
+Worst thing about PHP jokes, no matter how good or bad, everyone laughs.  Almost
+A packet header walks into a bar, the bartender holds up a gun to the packet, statefully.
+Few people understand a Douglas Englebart joke until after the patents have run out.
+An RADIUS server once asked me for some lip balm because he was feeling a CHAP.
+Considering how queer tolerant SF is people are mighty upset my MitM jokes
+Tweet, tweet, tweet.  Doesn't anybody finger anymore?
+What's a pirate's favorite method of remote access? - ARRRRRRRRDP
+Having a good laugh with . 'MySQL is angry with me, "did you break it?" she asks; "yes" I said, "I DROP DATABASE"'.
+Mr. OAuth tries to cash out a cheuqe, it bounced! Teller said. Invalid signature.
+Even if you don't get a multicast joke, the bloke next to you can explain it.
+Ever since I converted to ReiserFS I can't seem to find those pictures of my wife.
+Someone could make a packet out of these networking jokes
+DNS servers must feel sad, nobody calls them by their name.
+I have a  joke about fermat but alas; 140 characters is not enough to tell it.
+The bad thing about XML jokes is that they take too long to tell, and sometimes are completely valueless.
+Standup comedy is like UDP: if they didn't get it the first time, don't bother trying again. It's the tell-and-pray
+The problem with DRM jokes is that you can't share them with your friends.
+What's the best thing about Prolog jokes? No.
+There. There is. There is nothing. There is nothing funny about path MTU detection.
+The problem with SIP-jokes is that you need to be invited first
+The problem with PGP jokes is that you need to gain everybody's trust before they can laugh with it.
+Python jokes are usually funny, even though the format is always the same...
+Good thing about a Serial-joke is people won't interrupt you when telling it
+Best  joke I have heard: An IPv4 address walks into a bar and says: "Quick, give me a drink. I am exhausted!"
+The problem with Drupal jokes is that there are 10000 to choose from, and only a few are funny, but you don't know which ones
+The bad thing about Haskell jokes is that let understood = map (isJust . understand) $ repeat joke in or understood == False
+I'm working on a bittorrent joke, but I only have about 30% and nobody's seeding!
+The great thing about a SIGKILL joke is, there's no way you can't get it (there's no ignoring it).
+Thus bad thing about SQL injection jokes is when people take them literally.
+The bad thing about an embedded systems joke is, if you tell it wrong, you're done. You'll never get a chance to re-tell it.
+The bad thing about IPv6 jokes is that nobody wants to tell them first.
+The best part about these  jokes is that you want to hear as many as you can once you get the first one. :P
+Chuck Norris has only one OSI layer - Physical
+I tried to tell a rlogin joke, but no one listens any more
+The good thing about Twitter jokes is they're so short. #meta
+The worst thing about HTTP jokes is the ridiculous TTL :P
+TheGoodThingAboutDomainNameJokesISThatAllTheGoodShortOnesHaveBeenTold.com unless you're being creati.ve
+Chuck Norris doesn't do #tcp handshake - he does #tcp roundhouse-kick to initiate the connection.
+The best thing about Linux command line jokes is that they're easier to understand if you use a pipe.
+The bad thing about RTS jokes is, you must first get ready to get them told
+DHCP jokes are leased
+The bad thing about KERBEROS jokes is: You can't understand them if your clock is wrong.
+The Problem with SSL jokes is that you must get someone else to vouch for you before you can tell the joke.
+The problem with UDP jokes: I don't get half of them
+OSI Layer-8 jokes are infinite.
+One great thing about XSD jokes is that you'll get a warning for every inappropriate content.
+SSH 1.33 and/or 1.5 protocol jokes are useless.
+The best GFW jokes are inaccessible from China.
+Nobody likes a Debian SSH joke. Everyone can guess the punchline.
+The good thing about bitcoin jokes is you can mine them yourself
+At least Ruby jokes have class.
+The bad thing about mono jokes is you know them ahead of time
+The best thing about NP jokes is that you can assume they exist; someone else decides if they're funny
+The best thing about symmetric cryptography jokes is, um. it's a secret.
+The problem with SMTP jokes are, you need some good reason to came back after greylisting and tell them again.
+The problem with a SQL security joke is that Sony don't get it.
+The good thing about Infiniband jokes is that the receiver __will__ get 'em
+Time to laugh exceeded!!! #TTL
+A SQL Query walks into a bar, approaches two tables and asks 'Can I join you?'
+The problem with Miranda jokes is that they are too lazy. And that they cannot unify num.>num with num.
+The bad thing about Kerberos jokes is that I can't tell them to you because I don't trust you and I don't know your name!
+Someone sent me 3K Fortify jokes the other day. I read through every last one of them and only 1 of them was funny.
+One big problem with Bittorrent jokes is, everybody just leeches. When they got them they stop seeding immediately.
+The funny thing about C jokes is when the null terminator is %s ¾Ò¾Ð>Ó¾ÑÞØ.·7çÉýWPw.àøßÿkúo.p4ÿûø.ô4h
+The best thing about DNSSEC jokes is that you can check if they were told wrong
+A good SOAP joke should be clean so it's acceptable for all protocols.
+The best thing about DNSSEC is that - oh look a Dan Kaminsky appeared!
+I heard a great one about IPSEC, but you wouldn't get it -- it's an inside joke.
+The problem with pdf jokes is, Please enter the password to copy the punchline.
+I'd love to tell you a publish/subscribe joke, but you need to tell me what it's about or some part of it, so that you can get it.
+I'd tell you the one about the CIDR block, but you're too classy.
+snmp walks intoabar and gets unknown object identifier
+Is "smoke signal" a routable protocol?
+The best thing about ECB jokes is that you don't need to hear the beginning to understand the whole joke
+I'd like to tell you the full joke about a BGP table but I don't think you can remember it all
+Give me some SLAAC, I'm just trying to prepare for #WorldIPv6Day  #IPv6
+rsync warning: some jokes vanished before they could be transferred (code 24)
+IHAVE <a.new.joke.about@NNTP>
+The problem with greylisting jokes is, that you always have to tell them twice.
+The sad thing about Kerberos jokes is that you first have to buy a ticket to join the laughter
+The best thing about XMPP jokes is that you can tell when they're available.
+I like ARP-Jokes, because it's so easy to make them appear to originate from other persons.
+George Bush only knows one #OSI Layer - 8
+The best thing about 404 jokes is... wait, damnit, it's around here somewhere.  (Hey look, there's a 302 joke over there!)
+Unfortunately you need MIB files to understand the best SNMP jokes.
+The problem UDP jokes
+The problem with facebook jokes is that you need to register to see them
+Huntingtons clash of civilizations should be solved by computer scientists. Just RFC all those social protocols.
+You need to tell a authorized POP3 joke before you can have a SMTP laugh.
+In high society, TCP is more welcome than UDP. At least it knows a proper handshake.
+The thing about XSS jokes is telling them in the right context.
+The good thing about recursive jokes is the good thing about recursive jokes.
+The problem with CSS jokes is that everyone understands them differently
+So functional jokes don't follow procedure?
+The best thing about Twitter API jokes is that you can only make 100 of them per hour
+The worst thing about IPSEC jokes is that nobody knows if you've told the whole thing properly.
+The best thing about declarative jokes is that you only have to prescribe laughter, no need to actually tell the joke.
+1990 The problem with long polling jokes: They take forever... until you lose interest.
+The worst thing about recursive jokes is, that, when malformed, they never end
+The best thing about an XHR joke is that you only need to retrieve it in part.
+The problem with NoSQL jokes: It's not clear in what language to tell them
+Take my wifi... please!
+I was going to use my web server to tell this joke, but I don't think you would GET it.
+The problem with HTTP jokes is you either make up a brilliant one or a total idiot out of yourself
+Too many SMTP jokes push the envelope of  good taste...
+The best thing about CUPS jokes is that no matter how old it gets it keeps being updated.
+The thing about CSRF jokes is getting someone else to tell it for you.
+The best thing about tautology jokes is the best thing about tautology jokes.
+I tried to tell a  joke but it was too long for my family - they stopped listening after the first quarter of it.
+The problem with Tor jokes is that the first two recipients never understand it.
+Worst thing about pike jokes is they are indexing the NULL value with "laugh"
+The worst part with R jokes is that you cannot find them via google
+The best thing about RIP jokes is that they're funny 15 more times.
+Arrival order packet joke is critical to good a make
+The good thing about object oriented jokes is they bring their own laughter method.
+The best part about IPv6 jokes is that you don't have to make up the punchline for 15 years.
+The best thing about #solr jokes is that they are mostly made up by stopwords
+The good thing about failover jokes is that if you stop telling them someone else will continue.
+A lot of people seem to be violating  by failing to adhere to the "proto" part of the spec.
+The thing about ISO/OSI jokes is that they're palendromes. That's the best you can say about them.
+The best thing about Google Wave jokes is that you can always open source them and hope someone else makes them funny
+The bad thing about smtp is  everyone can visit Homee
+The good thing about Apple jokes is that everyone think they are new, funny and awesome, even if you just stole them.
+The bad thing with jokes around EOF
+The problem with source-routing jokes is that there is always a chance to rebrand the implementation at each IP version release
+The worst thing about UTF-8 jokes are Ä¹ÎµÄ¡Ð°Ï.Î³ Ã¼Æ¨È.È.Å¡.
+I always get jittery when making jokes in real time.
+The best thing about singleton jokes is the worst thing about singleton jokes.
+The best thing about Appletalk is that nobody is using it any more.
+When you laugh to an Apple joke, you need to laugh the same way as million people.
+I saw your POST, but could only respond with OK - I guess I didn't GET it.
+The worst thing about NP complete jokes is that there is no good way to tell them...
+I don't care if you get the UDP joke or not. I don't even know.
+There are no good DH jokes because nobody agrees on the same prime
+It may take awhile,............when telling a java joke. but then everybody is catching a laugh-attack. wtihout exceptions.
+The problem with a cryptography joke is that you need to tell a pair of them before anyone understand what's being said.
+The good thing about #tor and their unions is that's like a virtual machine in a virtual machine, it will be slow.. inception!
+The great thing about NFSv3 jokes is that anyone can join the laughter.
+The strange thing about BGP jokes is that they're borderline funny but everybody repeats them anyway
+Only Alice and Bob get public/private key jokes
+Didn't we run out of IPv4 jokes?
+Finding a #heartbeat joke is like splitting #brains
+I tweeted several IPX/SPX jokes, but they cant reach the Internet
+I'd dropped my SLIP for a quick
+The bad thing about #WWDC jokes is there's always one more thing...
+The great thing about Teredo jokes is that you can tell smart jokes even when surrounded by dumb peers.
+T he bes thin gabou tTCPfl owcontr oljokesi sthatthey knowwhento backo ff....
+{1,Two guys}{2,Hear about}{1,are talking}{2,the dope}{1,in}{2,who confused}{1.full-duplex,}{2,TDM with full-duplex?}
+LAN jokes can only be told properly if you tell an STP joke first.
+A token walks into a bar. Another token can't walk into the bar because it's afraid of the dog.
+It's very comforting to know there's at least one  joke about coffee.
+The best thing about SPDY jokes is that many people get them (whether they want to or not.)
+The more  jokes, the worse the protocol. Very intuitive.
+A webserver may tell you her joke, but only if you tell her where you're from and give her a cookie.
+UDP jokes don't always get a laugh - unreliable material, don't you know....
+Postgres finds foreign jokes offensive. Not so for MySQL
+awk jokes work best as one-liners
+Blocking this SSH joke because IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+C joke run.
+No SOAP, radio.
+XML jokes are well-formed
+C# jokes are dull.
+thankfully, Twitter journaled the entire HTTP conversation and now we can revert the transaction without committing it.
+Yeah, we really need some sort of control message for when the HTTP feed gets congested... a protocol...
+EIB-jokes as well as sans-papiers only imprint once they're registered.
+I made a great Digg joke last month but nobody saw it yet
+If you dont GET the TCP/IP , you never know if its because of the server or the proxy
+gur orfg guvat nobhg EBG13 wbxrf vf, rirelbar unf gb qvt hc gurve 20 lrne byq pbairegref
+I have a great collection of Ada jokes, but it would take too long to compile them into a book...
+The four hard things in CS are cache invalidation, naming, and off-by-one errors.
+I can't tell a real good "C" joke because i don't have Class.
+The worst thing about i18n jokes is assuring everyone can understand it.
+Use the #ETIMEDOUT hashtag. Any tweets you missed will get resent.
+Traffic shaping: All packets are equal, but some are more equal than others.
+If you don't GET it, you're not http'ing hard enough!
+Don't want anyone to know you're wasting time reading ? Just set DNT=1 and I promise not to tell.
+The bad thing about WEP jokes is that they all stink, so better don't sniff them.
+The problem with SecureID jokes is that everyone already knows your punch line!
+The bad thing about bean sprout jokes is you never know where thEHEC they came from
+A joke about IEEE 802.15.5 is pointless if you tell it right.
+I hope that there is no copyright on p2p jokes
+The worst thing about  jokes is that it creaps into your head and everything is checked for protolollability
+The good thing about online privacy jokes is that you never have to admin your told one
+The fun thing about wikipedia jokes is that everybody can change the ending
+#solr jokes have too many facets for a proper punchline
+The problem with Perl jokes is that you have to read them 10 times before you get them
+The sad thing about german #Wikipedia is... deleted for not being relevant.
+IRC jokes are skype jokes told discontinuously are all wiretapped
+Scheme jokes are :)))
+is that the compiler may change the order. The best thing about FORTRAN jokes
+The good thing about #P2P jokes is that you only need to tell them once
+You have to tell a broadcast joke to everybody to find the one who see the fun on it
+And electric heat jokes are a waste of energy
+Get new midi jokes telling them to the wrong group
+After dropping the packet the IP said it was my best effort..
+RFC1918 jokes are inside jokes
+This joke has been lost in the iCloud
+Yeah, I know you wanna hear my 401 joke, but I'm not telling it unless you provide me proper authorization.
+Sorry, but not allowed to tell you my 403 joke. So stop asking!
+Telling alot of bluetooth jokes will reduce the bandwidth of your wifi jokes.
+All the 301 jokes have moved permanently
+CRC jokes tend to get repeated until you get them right.
+the problem with git jokes is that even branches could cause serious injuries reading them aloud
+The best thing about distributed joking is that everybody can participate! joke@home
+The worst thing about PS3 game jokes is that the punchline comes as a separate Downloadable Content.
+The problem with filesize limit jokes is
+Serial jokes must be told bit by bit.
+Broadcast your own arp jokes, mine are only funny within the same collision domain
+I don't always use TCPIP, but when I do it's a protocol that no one else uses
+The good thing about NoSQL jokes is, they scale well for larger audiences.
+The problem with java jokes is, people always tell them so slowly
+The problem with IPV6 jokes is they're long, obscure and no one gets them without a translation.
+The best thing about iOS jokes is, that with v4 you can listen to more than one of them
+The great thing about rails jokes is that @dhh will force you to laugh at them
+I could tell you some IPX jokes but they are all topical and based on events from the early 90's
+I heard a funny  joke on Reddit yesterday. Guess I'll see it tomorrow on Digg
+I know a great IPv6 joke, but I just don't think you're ready for it.
+Why are ASAs so noisy?  They don't know how to ssh.
+What sucks about HTTP jokes is that if you start telling one and it goes badly, you can't modify the header to make it a 404.
+What's more, HTTP jokes are rarely better than OK.
+I was promised a three way and all I got was a TCP handshake.
+The halting problem with jokes is ............................. ...
+Three funny things about IRC: lol, rofl & lmao
+A UDP packet walks into a bar without a checksum. Nobody cares.
+If you GET an HTTP joke, you may POST it, PUT it away or DELETE it from your HEAD.
+How about: If you GET an HTTP joke you have several OPTIONS: you may POST it, PUT it away or DELETE it from your HEAD
+I would tell you a WEP joke, but I need to collect 50,000 packets first  #late #amidoingthisright?
+No FTP jokes on  -- is it because they better pass through the gateways when they are passive?
+The problem with python jokes is that you need meaningful pauses when telling them.
+The problem with python jokes is that they are too explicits.
+the good thing with Cuil jokes is lasers with skirts made of concrete. Velociraptor.
+The thing with Active-X jokes is that people either don't listen because it's too dangerous or don't even realize you told a joke.
+A problem I have with AS 3.0 jokes is that I have to remove the EventListener from the previous joke before telling a new one.
+The sad thing about flash jokes is that iOS users never get them.
+there probably won't be much .net jokes in the future but more for html5+javascript ones
+Oh, I have a good Actionscript joke now. Hold on, it's inside root.movieclip1.movieclip2.movieclip3....
+Streaming multicast jokes: everybody starts listening at different times, so you end up telling them to everyone individually.
+People who tell routing jokes always exceed their time-to-live.
+Check out some SVN jokes and if you don't find them funny make a revision
+Hey! Your HTTP 206 joke did not have a punchline!
+Someone was telling me a HTTP 304 joke but I heard it before
+I just read a joke about Facebook. and I like it.
+A TCP packet walks into a bar "I want a beer." Bartender responds "You want a beer?" Packet responds "I want a beer."
+I tried to DISCover some DHCP jokes, but nobody was OFFERing any. When I REQuested some, I wasn't even ACKnowleged.
+The great thing about SCTP jokes is you can have more than one punchline in the same joke.
+An IRC Op told a joke but nobody laughed. He forgot the channel was set to +m and nobody had +v.
+WEP cracking - the first sport to introduce replay
+VoIP is the latest koolaid ingredient....seems like everyone is already taking a SIP
+I sent an HTTP request, and all I got was this lousy teapot  #rfc2324 #http418
+Hey @diveintomark, can I come over and tell you a sneakernet joke?
+The best thing about EIGRP jokes is that you can share them with your neighbors
+The problem with a ARP joke is that lazy admins could use proxy ARP if the ARP fails with subnets
+the problem with #rawsockets jokes is that it takes ages just to write one, and chances are high nobody will understand it
+the punchline of a latex joke will only unfold after being converted to a pdf joke
+1aBonline The problem with 7/tcp and 7/udp  is that the laughter sounds exactly the same as the joke.
+The worst part about Flash jokes is that half of your listeners will block the punchline.
+Doctor: What seems to be the problem? Router: It hurts when IP.
+DNS jokes tell you where to find the punchline.
+The problem with Node.js jokes is that people laugh in chunked streams that need to be drained between each write.
+This traffic shaping router did not let me pass until the QoS parade was over.
+See, there was this big firewall suddenly, so I had to digg a tunnel for me.
+A shark bit my wire, and I had to fix it.
+No one ever gets my null routed jokes
+406 jokes are not acceptable
+My favorite DOM XSS jokes were so funny but #DOMinator unleashed them all
+wwhhaatt iiss  tthhee  bbeesstt tthhiinngg  aabboouutt ttccpp//77  jjookkeess
+There are 10 possibilities when you tell a binary joke. Either people get it or they don't
+The sad thing about SQL jokes is that nobody GRANT you that you will ALTER PEOPLE MOOD
+Got a joke about SNMP but its private ...
+The worst thing about Error 402 jokes is you must login to GET them
+The great thing about telling HTTP 304 jokes is you won't accidentally tell someone the same joke twice.
+I have a great HTTP 302 joke, come over here and I'll tell you.
+The best thing about HTTP 100 jokes is that the best thing about HTTP 100 jokes is that the best thing about HTTP 100 jokes is...
+The best thing about fuzzing jokes is nobody minds if 99% of them aren't funny.
+The best thing about fuzzing jokes is the monkey in the bathtub.
+HTTP 200 jokes are only OK.
+The best thing about X.509 jokes is that you can revoke them if they aren't funny.
+On 4/04 I went the parking lot and my car was Not Found.  Not kidding.  Stolen.
+The best thing about HTTP 206 jokes is
+I think HTTP 203 jokes are funny but what would I know?
+MySQL joke has gone away
+I'm going to keep telling you this TCP joke until you get it.
+I really don't GET HTTP 404 jokes.
+I could even tell you a HTTP 403 joke, but you know, I'm not allowed to do it
+Mark 16:6-7 (HTTP 301) #bible
+Luke 15:8-10 (HTTP 404) #bible
+Psalm 119 (HTTP 414) #bible
+Maccabees (HTTP 203) #bible
+It'll hurt more when UDP #badumdumting
+The great thing about HTTP Upgrade jokes is... wait, someone might be listening, come closer add I'll whisper
+The good thing about OCaml jokes is that they are very functional.
+The worst thing about WiFi jokes is having to shout them over you neighbours.
+The problem with protolol jokes is that they don't follow a protocol.
+You need to remember HTTP 410 jokes before you get them
+I don't trust you enough to tell you a GNUnet joke.
+The not-so-great thing about Thinnet jokes is that if two people try to tell one at the same time they get hit by a bus.
+The problem with OAuth jokes is that you always need some web site middle-man or nobody will get them.
+Whenever you tell a localhost joke, you're talking to yourself.
+The problem with C++ jokes is that you'll always have to expose your privates.
+The best thing about HTTP 413 jokes is that they all refer to your mother
+The great thing about HTTP 300 jokes is that you get at least one.
+The problem with CSMA/CD jokes is that if someone else interr10101010101010101010101010101010
+The problem with GSM data jokes is the price tag when getting them abroad.
+The best thing about design pattern jokes is that they are generic and reusable.
+The best thing about a singleton joke is there can be only one
+So, three frames walk into a timeslot.. #aloha
+The problem with those old AT modem protocol jokes is that when they contain +++
+The best part about making fun of Apple is... brb, someone's at the doorrrrrfa76e98yuxx(*(====== [sent from my iphone]
+The problem with Napster jokes is that everyone has a slightly different version.
+The best part of ACID-complaint jokes is that if just one person doesn't get it, nobody remembers that you told it.
+The best thing about Delay-Tolerant Networking jokes is that everyone gets them eventually.
+The problem with HTTP 101 jokes is that an Englishman, Irishman, and a Scotsman walked into a bar
+The great thing about Haskell jokes is that they all reduce to one-liners.  #haskell #purecomedy
+The problem with #rawsockets jokes is that it takes ages just to write one, and chances are high nobody will understand it
+The nice thing about Erlang jokes is that you can tell so many of them in parallel
+The problem with BitTorrent jokes is that the only person having the most important part of joke would probably be offline
+We need to find more space for the IPv4 Comedy Roadshow, since all seats are taken.
+The thing about AX.25 comedy is that it's always amateur hour.  #hamradio
+The problem with these  jokes is that they are much quicker and easier to tell in REBOL #FYT
+The trouble with bitcoin jokes is they're just not worth the time you put into them.
