@@ -23,7 +23,7 @@ public enum Util {;
     }
 
     public static long chance(final double p) {
-        return random() > p ? 1 : 0;
+        return random() < p ? 1 : 0;
     }
     public static boolean isTrue(final long chance) {
         return chance == 1;

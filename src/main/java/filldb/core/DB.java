@@ -24,6 +24,8 @@ public enum DB {;
 
     public static void executeQueries(final Connection connection, final List<String> queries) throws SQLException {
         for (final var query : queries) {
+            if (query.isEmpty()) continue;
+
             try (final var statement = connection.createStatement()) {
                 statement.executeUpdate(query);
             }

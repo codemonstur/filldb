@@ -163,13 +163,12 @@ public enum Generate {;
         try (final var statement = connection.createStatement()) {
             final ResultSet resultSet = statement.executeQuery(format("SELECT * FROM %s", table.name));
 
-            final List<String> values = new ArrayList<>(columnList.size());
+            final String[] values = new String[columnList.size()];
             while (resultSet.next()) {
                 for (int i = 0; i < columnList.size(); i++) {
-                    values.add(i, toQuotedString(resultSet.getString(columnList.get(i))));
+                    values[i] = toQuotedString(resultSet.getString(columnList.get(i)));
                 }
                 queries.add(String.format(insertQuery, values));
-                values.clear();
             }
 
         }
