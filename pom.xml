@@ -60,7 +60,7 @@
         <dependency>
             <groupId>com.github.codemonstur</groupId>
             <artifactId>jcli</artifactId>
-            <version>0.9.4</version>
+            <version>0.9.5</version>
         </dependency>
 
         <dependency>

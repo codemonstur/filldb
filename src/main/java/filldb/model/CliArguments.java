@@ -1,6 +1,6 @@
 package filldb.model;
 
-import jcli.CliOption;
+import jcli.annotations.CliOption;
 
 public final class CliArguments {
 
