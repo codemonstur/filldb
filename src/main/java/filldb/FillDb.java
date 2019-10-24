@@ -32,4 +32,10 @@ public enum FillDb {;
         }
     }
 
+    public static List<String> generateInsertQueries(final CliArguments arguments) throws SQLException {
+        try (final Connection connection = connect(arguments.jdbcUrl, toDbDriverProperties(arguments))) {
+            return Generate.generateInsertQueries(connection,
+                downloadSchema(connection, false), arguments);
+        }
+    }
 }

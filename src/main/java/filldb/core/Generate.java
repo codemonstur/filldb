@@ -10,6 +10,7 @@ import filldb.model.Table;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,21 +62,21 @@ public enum Generate {;
     private static List<String> fillTable(final Connection connection, final Table table, final int numQueries
             , final boolean ignoreErrors) throws SQLException {
 
+
+        final List<String> columnList = new ArrayList<>();
+        final List<String> columnValues = new ArrayList<>();
+        for (final Column column : table.columns) {
+            if (column.isAutoIncrementing) continue;
+
+            columnList.add(column.name);
+            columnValues.add("?");
+        }
+
+        final String insertQuery = format("INSERT INTO %s (%s) VALUES (%s);",
+                table.name, join(",", columnList), join(",", columnValues));
+
         final List<String> queries = new ArrayList<>();
-
         for (int i = 0; i < numQueries; i++) {
-            final List<String> columnList = new ArrayList<>();
-            final List<String> columnValues = new ArrayList<>();
-            for (final Column column : table.columns) {
-                if (column.isAutoIncrementing) continue;
-
-                columnList.add(column.name);
-                columnValues.add("?");
-            }
-
-            final String insertQuery = format("INSERT INTO %s (%s) VALUES (%s);",
-                    table.name, join(",", columnList), join(",", columnValues));
-
             try {
                 final PreparedStatement statement = connection.prepareStatement(insertQuery);
                 int j = 0;
@@ -123,5 +124,69 @@ public enum Generate {;
     private static ValueSetter newPatternSetter(final Column column) {
         final Generex generex = new Generex(column.pattern);
         return (index, statement) -> statement.setString(index, generex.random());
+    }
+
+    public static List<String> generateInsertQueries(final Connection connection, final List<Table> tables
+            , final CliArguments arguments) throws SQLException {
+
+        final List<String> queries = new ArrayList<>(tables.size()*arguments.numQueries);
+
+        boolean allDone = false;
+        while (!allDone) {
+            allDone = true;
+            for (final Table table : tables) {
+                if (table.isFilled) continue;
+                allDone = false;
+                if (!table.isFillable()) continue;
+
+                queries.addAll(insertQueriesFor(connection, table));
+                table.isFilled = true;
+            }
+        }
+
+        return queries;
+    }
+
+    private static List<String> insertQueriesFor(final Connection connection, final Table table) throws SQLException {
+        final List<String> queries = new ArrayList<>();
+
+        final List<String> columnList = new ArrayList<>();
+        final List<String> columnValues = new ArrayList<>();
+        for (final Column column : table.columns) {
+            columnList.add(column.name);
+            columnValues.add("%s");
+        }
+
+        final String insertQuery = format("INSERT INTO %s (%s) VALUES (%s);",
+                table.name, join(",", columnList), join(",", columnValues));
+
+        try (final var statement = connection.createStatement()) {
+            final ResultSet resultSet = statement.executeQuery(format("SELECT * FROM %s", table.name));
+
+            final List<String> values = new ArrayList<>(columnList.size());
+            while (resultSet.next()) {
+                for (int i = 0; i < columnList.size(); i++) {
+                    values.add(i, toQuotedString(resultSet.getString(columnList.get(i))));
+                }
+                queries.add(String.format(insertQuery, values));
+                values.clear();
+            }
+
+        }
+
+        return queries;
+    }
+
+    private static String toQuotedString(final String input) {
+        final StringBuilder builder = new StringBuilder();
+        builder.append('\'');
+
+        for (final char c : input.toCharArray()) {
+            if (c == '\\' || c =='\'') builder.append('\\');
+            builder.append(c);
+        }
+
+        builder.append('\'');
+        return builder.toString();
     }
 }
