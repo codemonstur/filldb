@@ -234,6 +234,7 @@ public enum DataGenerators {;
     public static ValueGenerator newShortTextGenerator(final boolean allowHumor) {
         final List<String> jokes = resourceToLines("/lists/jokes.txt");
         final List<String> insults = resourceToLines("/lists/insults.txt");
+        final List<String> attacks = resourceToLines("/lists/attacks.txt");
 
         final Function<Column, Boolean> canGenerateFor = column -> {
             if (column.characterMaxLength == null || column.characterMaxLength < 64) return false;
@@ -242,8 +243,9 @@ public enum DataGenerators {;
 
         return newValueGenerator("Short texts", canGenerateFor, column -> (index, statement) -> {
             String result = LORUM_IPSUM;
-            if (allowHumor && isTrue(chance(0.5))) result = randomItemFrom(jokes);
-            if (allowHumor && isTrue(chance(0.5))) result = insertText(randomItemFrom(insults), "the tester");
+            if (allowHumor && isTrue(chance(0.4))) result = randomItemFrom(jokes);
+            else if (allowHumor && isTrue(chance(0.4))) result = insertText(randomItemFrom(insults), "the tester");
+            else if (isTrue(chance(0.8))) result = randomItemFrom(attacks);
             statement.setString(index, abbreviate(result, column.characterMaxLength));
         });
     }

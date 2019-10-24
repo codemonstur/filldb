@@ -12,8 +12,8 @@ public enum LocalLorums {;
 
     public static Supplier<String> newRandomLocalIpsumGenerator() {
         final List<LorumIpsumGenerator> generators =
-            asList(newDeLoreanIpsum(), newDoggoIpsum(), newMauiIpsum()
-                , newRikerIpsum(), newSamuelJacksonIpsum());
+            asList( newDeLoreanIpsum(), newDoggoIpsum(), newMauiIpsum()
+                  , newRikerIpsum(), newSamuelJacksonIpsum(), newFuzzAttacksIpsum());
 
         return () -> {
             int tries = 3;
@@ -79,6 +79,11 @@ public enum LocalLorums {;
 
     public static LorumIpsumGenerator newSamuelJacksonIpsum() {
         final List<String> jackson = resourceToLines("/lorum/samuel-l-jackson.txt");
-        return () -> jackson.get(randomInt(jackson.size()));
+        return () -> randomItemFrom(jackson);
+    }
+
+    public static LorumIpsumGenerator newFuzzAttacksIpsum() {
+        final List<String> attacks = resourceToLines("/lists/all-attacks.txt");
+        return () -> randomItemFrom(attacks);
     }
 }
