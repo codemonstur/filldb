@@ -1,0 +1,26 @@
+0.1.0
+
+First real version. Features:
+- Support for mariadb, no other DBs can be used from the command line
+- Support for other DBs as a library is; use at your own risk
+- Supports arbitrary schema, no need to teach the tool anything
+- Various command line arguments to turn features on and off
+- There is a help command but it doesn't help much yet
+- Generating lorum ipsums from:
+  - Generic lorum ipsum as fallback
+  - DeLorean ipsum
+  - Samuel L. Jackson ipsum
+  - Legal ipsum
+  - Maui ipsum
+  - Doggo ipsum
+  - Cat ipsum
+  - Many more..
+- There are both local and remote ipsums, remotes are retrieved from their respective websites
+- There is image generation, the code retrieves a random comic from a set of configured webcomics
+- Ability to delete all data from the DB before generating new
+- Ability to use the existing data from the DB and add to it
+- A generator based on regular expressions found in the column comment
+- Generators for many common fields:
+  - address, street, city, country, state, name, organization, password, hex, and more..
+- Support for the common data types:
+  - int, bigint, varchar, bit, text, blob. Many data types still missing
