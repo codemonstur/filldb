@@ -49,7 +49,7 @@ As are bugs, comments and anything else really.
 1. Check out the code `git clone https://github.com/codemonstur/filldb.git`
 2. Package `mvn package`
 3. You can now run the code with `java -jar target/filldb.jar`
-[Optional] 4. Copy the code to `/usr/local/bin`
-[Optional] 5. Create an alias `alias filldb='java -jar /usr/local/bin/filldb.jar'`
+4. \[Optional] Copy the code to `/usr/local/bin`
+5. \[Optional] Create an alias `alias filldb='java -jar /usr/local/bin/filldb.jar'`
 
 The code requires Java 12.
