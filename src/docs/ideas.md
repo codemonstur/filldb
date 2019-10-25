@@ -8,6 +8,7 @@
   year
 - Support other databases;
   PostgreSQL, H2, HSQL, MS SQL, Oracle, etc.
+- Support in memory databases and migration scripts
 - Other names
   - Business, Government, Movie, TV, Plant, Mineral
   - any other names
@@ -26,3 +27,12 @@
 - Avatar generator
   https://www.fakepersongenerator.com/user-face-generator
 - Username generator
+- Use transcripts for movies as lorum ipsum
+- Use movie songs as lorum ipsum
+- Use poems as lorum ipsum
+- Be tolerant of already used comments for columns
+  Only use the comment if is says one of these:
+  - 'filldb pattern \[regular expression]'
+  - 'filldb enum one,two,three,four'
+  - 'filldb ipsum name-of-ipsum'
+- Custom generators

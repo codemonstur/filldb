@@ -1,11 +1,10 @@
-include .env
-export
 
 .PHONY: clean build check-versions release-notes deploy test help
 
 DATE=`date +'%F'`
 NAME=`xmllint --xpath "//project/artifactId/text()" pom.xml`
 VERSION=`xmllint --xpath "//project/version/text()" pom.xml`
+URL=jdbc:mariadb://localhost:3306/filldb
 
 clean:
 	@echo "[$(NAME)] Cleaning"
