@@ -5,7 +5,6 @@
     <artifactId>filldb</artifactId>
     <version>0.2.0</version>
 
-
     <name>${project.groupId}:${project.artifactId}</name>
     <description>A tool for filling a mariadb database with test data</description>
     <url>https://github.com/codemonstur/filldb</url>

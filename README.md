@@ -37,7 +37,6 @@ Still missing:
 - Can download various lorum ipsums from generators online
 - Can download various cartoons from webcomics
 
-
 ### Future features
 
 There are some listed in `src/main/docs/ideas.md`.
@@ -47,7 +46,7 @@ As are bugs, comments and anything else really.
 ### Installation
 
 1. Check out the code `git clone https://github.com/codemonstur/filldb.git`
-2. Package `mvn package`
+2. Run `make install`
 3. You can now run the code with `java -jar target/filldb.jar`
 4. \[Optional] Copy the code to `/usr/local/bin`
 5. \[Optional] Create an alias `alias filldb='java -jar /usr/local/bin/filldb.jar'`
