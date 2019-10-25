@@ -51,4 +51,4 @@ As are bugs, comments and anything else really.
 4. \[Optional] Copy the code to `/usr/local/bin`
 5. \[Optional] Create an alias `alias filldb='java -jar /usr/local/bin/filldb.jar'`
 
-The code requires Java 12.
+The code requires Java 11.
