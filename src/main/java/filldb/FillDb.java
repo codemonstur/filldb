@@ -17,10 +17,7 @@ public enum FillDb {;
 
     public static void clearDatabase(final CliArguments arguments) throws SQLException {
         try (final Connection connection = connect(arguments.jdbcUrl, toDbDriverProperties(arguments))) {
-            final List<String> tables = listTableNames(connection);
-            final List<String> queries = tables.stream().map(table -> "DELETE FROM " + table + ";").collect(toList());
-
-            executeQueries(connection, queries);
+            executeQueries(connection, toDeleteFromQueries(listTableNames(connection)));
         }
     }
 
@@ -32,10 +29,21 @@ public enum FillDb {;
         }
     }
 
-    public static List<String> generateInsertQueries(final CliArguments arguments) throws SQLException {
+    public static List<String> listInsertQueries(final CliArguments arguments) throws SQLException {
         try (final Connection connection = connect(arguments.jdbcUrl, toDbDriverProperties(arguments))) {
             return Generate.generateInsertQueries(connection,
                 downloadSchema(connection, false), arguments);
         }
     }
+
+    public static List<String> listDeleteQueries(final CliArguments arguments) throws SQLException {
+        try (final Connection connection = connect(arguments.jdbcUrl, toDbDriverProperties(arguments))) {
+            return toDeleteFromQueries(listTableNames(connection));
+        }
+    }
+
+    private static List<String> toDeleteFromQueries(final List<String> tables) {
+        return tables.stream().map(table -> "DELETE FROM " + table + ";").collect(toList());
+    }
+
 }
