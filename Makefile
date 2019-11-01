@@ -28,7 +28,7 @@ release-notes:
 install:
 	@echo "[$(NAME)] Building"
 	@mvn -q -DskipTests=true clean package org.apache.maven.plugins:maven-shade-plugin:3.2.1:shade@shade
-	@echo "[$(NAME)] Run with 'java -jar target/filldb.jar' or "
+	@echo "[$(NAME)] Run with 'java -jar target/filldb.jar' or create an alias"
 
 deploy: build
 	@echo "[$(NAME)] Tagging and pushing to github"
