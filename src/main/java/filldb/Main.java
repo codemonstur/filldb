@@ -13,7 +13,6 @@ public enum Main {;
 
     public static void main(final String... args) throws SQLException, InvalidCommandLine {
         final CliArguments arguments = newCliParser(CliArguments::new)
-            .name("filldb")
             .onErrorPrintHelpAndExit()
             .onHelpPrintHelpAndExit()
             .parse(args);

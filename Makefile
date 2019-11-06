@@ -5,6 +5,7 @@ DATE=`date +'%F'`
 NAME=`xmllint --xpath "//project/artifactId/text()" pom.xml`
 VERSION=`xmllint --xpath "//project/version/text()" pom.xml`
 URL=jdbc:mariadb://localhost:3306/filldb
+PREVIOUS_TAG=`git tag | sort -r | head -n 1`
 
 help:
 	@echo "Available targets for $(NAME):"
@@ -32,7 +33,7 @@ release-notes:
 	@echo "[$(NAME)] Writing release notes to src/docs/releases/release-$(VERSION).txt"
 	@echo "$(VERSION)" > src/docs/releases/release-$(VERSION).txt
 	@echo "" >> src/docs/releases/release-$(VERSION).txt
-	@git log --pretty="%ci %an %s" master >> src/docs/releases/release-$(VERSION).txt
+	@git log --pretty="%s" $(PREVIOUS_TAG)... master >> src/docs/releases/release-$(VERSION).txt
 
 deploy: build
 	@echo "[$(NAME)] Tagging and pushing to github"
@@ -40,11 +41,13 @@ deploy: build
 	@git push && git push --tags
 	@echo "[$(NAME)] Creating github release"
 	@hub release create -d -a target/$(NAME)-$(VERSION).jar -a target/$(NAME)-$(VERSION)-javadoc.jar -a target/$(NAME)-$(VERSION)-sources.jar -F src/docs/releases/release-$(VERSION).txt $(NAME)-$(VERSION)
+	@echo "[$(NAME)] Uploading to maven central"
+	@mvn clean deploy -P release
 
 install:
 	@echo "[$(NAME)] Building"
 	@mvn -q -DskipTests=true clean package org.apache.maven.plugins:maven-shade-plugin:3.2.1:shade@shade
-	@echo "[$(NAME)] Run with 'java -jar target/filldb.jar' or "
+	@echo "[$(NAME)] Run with 'java -jar target/$(NAME).jar' or create an alias"
 
 test: install
 	@echo "[$(NAME)] Testing"

@@ -22,10 +22,10 @@ Meant to be used from the command line.
 
 ### Status
 
-A little rough around the edges but generally functional.
-Still missing:
-- Decent command line help output
-- Dealing with primary keys that span multiple columns (may or may not fail with the current code)
+Only one real problem left:
+Dealing with primary keys that span multiple columns (may or may not fail with the current code)
+
+There is a command line switch that allows you to ignore errors so that the insert won't fail completely.
 
 ### Current features
 

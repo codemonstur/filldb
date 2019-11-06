@@ -1,0 +1,7 @@
+0.2.0
+
+Added ability to use the tool as a library
+Made it easier to build a CLI version of the tool
+Added listing DELETE FROM queries
+Added listing INSERT INTO queries
+Downgraded to Java 11
