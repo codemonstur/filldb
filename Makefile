@@ -1,10 +1,20 @@
 
-.PHONY: clean build check-versions release-notes deploy test help
+.PHONY: help clean build check-versions release-notes deploy install test
 
 DATE=`date +'%F'`
 NAME=`xmllint --xpath "//project/artifactId/text()" pom.xml`
 VERSION=`xmllint --xpath "//project/version/text()" pom.xml`
 URL=jdbc:mariadb://localhost:3306/filldb
+
+help:
+	@echo "Available targets for $(NAME):"
+	@echo "\thelp\t\t\tThis help"
+	@echo "\tclean\t\t\tDelete everything in ./target"
+	@echo "\tbuild\t\t\tCleans the project and rebuilds the code"
+	@echo "\tcheck-versions\t\tCheck if the versions of dependencies are up to date"
+	@echo "\trelease-notes\t\tCreate release notes for the latest version"
+	@echo "\tdeploy\t\t\tClean, build and deploy a version to Github"
+	@echo "\tinstall\t\t\tClean, build and install the CLI to a local dir"
 
 clean:
 	@echo "[$(NAME)] Cleaning"
@@ -24,11 +34,6 @@ release-notes:
 	@echo "" >> src/docs/releases/release-$(VERSION).txt
 	@git log --pretty="%ci %an %s" master >> src/docs/releases/release-$(VERSION).txt
 
-install:
-	@echo "[$(NAME)] Building"
-	@mvn -q -DskipTests=true clean package org.apache.maven.plugins:maven-shade-plugin:3.2.1:shade@shade
-	@echo "[$(NAME)] Run with 'java -jar target/filldb.jar' or "
-
 deploy: build
 	@echo "[$(NAME)] Tagging and pushing to github"
 	@git tag $(NAME)-$(VERSION)
@@ -36,10 +41,11 @@ deploy: build
 	@echo "[$(NAME)] Creating github release"
 	@hub release create -d -a target/$(NAME)-$(VERSION).jar -a target/$(NAME)-$(VERSION)-javadoc.jar -a target/$(NAME)-$(VERSION)-sources.jar -F src/docs/releases/release-$(VERSION).txt $(NAME)-$(VERSION)
 
+install:
+	@echo "[$(NAME)] Building"
+	@mvn -q -DskipTests=true clean package org.apache.maven.plugins:maven-shade-plugin:3.2.1:shade@shade
+	@echo "[$(NAME)] Run with 'java -jar target/filldb.jar' or "
+
 test: install
 	@echo "[$(NAME)] Testing"
 	@java -jar target/filldb.jar -c $(URL) -r -d -s -i --allow-remote --allow-humor --allow-nsfw
-
-help: install
-	@echo "[$(NAME)] Testing"
-	@java -jar target/filldb.jar -h
