@@ -19,11 +19,11 @@ help:
 
 clean:
 	@echo "[$(NAME)] Cleaning"
-	@mvn -q clean
+	@mvn clean
 
 build:
 	@echo "[$(NAME)] Building"
-	@mvn -q -DskipTests=true clean package
+	@mvn -DskipTests=true clean package
 
 check-versions:
 	@mvn versions:display-dependency-updates
@@ -51,4 +51,4 @@ install:
 
 test: install
 	@echo "[$(NAME)] Testing"
-	@java -jar target/filldb.jar -c $(URL) -r -d -s -i --allow-remote --allow-humor --allow-nsfw
+	@java -jar target/$(NAME).jar -c $(URL) -r -d -s -i --allow-remote --allow-humor --allow-nsfw
