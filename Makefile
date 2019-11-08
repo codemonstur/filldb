@@ -51,4 +51,4 @@ install:
 
 test: install
 	@echo "[$(NAME)] Testing"
-	@java -jar target/filldb.jar -c $(URL) -r -d -s -i --allow-remote --allow-humor --allow-nsfw
+	@java -jar target/$(NAME).jar -c $(URL) -r -d -s -i --allow-remote --allow-humor --allow-nsfw
