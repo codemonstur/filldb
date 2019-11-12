@@ -152,9 +152,11 @@ public enum Generate {;
 
         final List<String> columnList = new ArrayList<>();
         final List<String> columnValues = new ArrayList<>();
+        final List<Boolean> columnShouldQuote = new ArrayList<>();
         for (final Column column : table.columns) {
             columnList.add(column.name);
             columnValues.add("%s");
+            columnShouldQuote.add(shouldQuoteDataType(column.dataType));
         }
 
         final String insertQuery = format("INSERT INTO %s (%s) VALUES (%s);",
@@ -166,7 +168,8 @@ public enum Generate {;
             final String[] values = new String[columnList.size()];
             while (resultSet.next()) {
                 for (int i = 0; i < columnList.size(); i++) {
-                    values[i] = toQuotedString(resultSet.getString(columnList.get(i)));
+                    final String value = resultSet.getString(columnList.get(i));
+                    values[i] = columnShouldQuote.get(i) ? toQuotedString(value): value;
                 }
                 queries.add(String.format(insertQuery, values));
             }
@@ -174,6 +177,14 @@ public enum Generate {;
         }
 
         return queries;
+    }
+
+    private static Boolean shouldQuoteDataType(final String dataType) {
+        if ("int".equals(dataType)) return false;
+        if ("bigint".equals(dataType)) return false;
+        if ("bit".equals(dataType)) return false;
+
+        return true;
     }
 
     private static String toQuotedString(final String input) {
