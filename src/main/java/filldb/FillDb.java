@@ -1,6 +1,7 @@
 package filldb;
 
 import filldb.core.Generate;
+import filldb.error.NoSuchGenerator;
 import filldb.model.CliArguments;
 
 import java.sql.Connection;
@@ -21,7 +22,7 @@ public enum FillDb {;
         }
     }
 
-    public static void fillDatabase(final CliArguments arguments) throws SQLException {
+    public static void fillDatabase(final CliArguments arguments) throws SQLException, NoSuchGenerator {
         try (final Connection connection = connect(arguments.jdbcUrl, toDbDriverProperties(arguments))) {
             final List<String> queries = Generate.fillDatabase(connection,
                     downloadSchema(connection, arguments.skipTablesWithData), arguments);
@@ -43,7 +44,7 @@ public enum FillDb {;
     }
 
     private static List<String> toDeleteFromQueries(final List<String> tables) {
-        return tables.stream().map(table -> "DELETE FROM " + table + ";").collect(toList());
+        return tables.stream().map(table -> "DELETE FROM `" + table + "`;").collect(toList());
     }
 
 }

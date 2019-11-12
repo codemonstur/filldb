@@ -8,9 +8,10 @@ import filldb.model.Column;
 import java.io.ByteArrayInputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 
 import static filldb.core.Constants.LORUM_IPSUM;
@@ -25,15 +26,33 @@ import static java.lang.System.currentTimeMillis;
 
 public enum DataGenerators {;
 
-    public static List<ValueGenerator> newDataGenerators(final boolean allowHumor, final boolean allowRemote
+    public static Map<String, ValueGenerator> newDataGenerators(final boolean allowHumor, final boolean allowRemote
             , final boolean allowNSFW) {
-        return Arrays.asList(newHexGenerator(), newAddressGenerator(), newStreetGenerator(), newCityGenerator()
-            , newStateGenerator(), newCountryGenerator(), newAgeGenerator(), newDateOfBirthGenerator()
-            , newDateGenerator(), newEmailGenerator(), newFirstNameGenerator(), newLastNameGenerator()
-            , newMiddleNameGenerator(), newFullNameGenerator(), newPhoneGenerator(), newPhoneNumberGenerator()
-            , newDomainGenerator(), newTimestampGenerator(), newJobGenerator(), newUriGenerator(allowHumor)
-            , newImageGenerator(allowHumor, allowRemote, allowNSFW), newLargeTextGenerator(allowHumor, allowRemote)
-            , newShortTextGenerator(allowHumor));
+        final Map<String, ValueGenerator> map = new LinkedHashMap<>();
+        map.put("hex", newHexGenerator());
+        map.put("address", newAddressGenerator());
+        map.put("street", newStreetGenerator());
+        map.put("city", newCityGenerator());
+        map.put("state", newStateGenerator());
+        map.put("country", newCountryGenerator());
+        map.put("age", newAgeGenerator());
+        map.put("date of birth", newDateOfBirthGenerator());
+        map.put("date", newDateGenerator());
+        map.put("email", newEmailGenerator());
+        map.put("first name", newFirstNameGenerator());
+        map.put("last name", newLastNameGenerator());
+        map.put("middle name", newMiddleNameGenerator());
+        map.put("full name", newFullNameGenerator());
+        map.put("phone", newPhoneGenerator());
+        map.put("phone number", newPhoneNumberGenerator());
+        map.put("domain", newDomainGenerator());
+        map.put("timestamp", newTimestampGenerator());
+        map.put("job", newJobGenerator());
+        map.put("uri", newUriGenerator(allowHumor));
+        map.put("image", newImageGenerator(allowHumor, allowRemote, allowNSFW));
+        map.put("large text", newLargeTextGenerator(allowHumor, allowRemote));
+        map.put("short text", newShortTextGenerator(allowHumor));
+        return map;
     }
 
     public static ValueGenerator newAddressGenerator() {

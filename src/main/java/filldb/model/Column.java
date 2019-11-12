@@ -34,7 +34,7 @@ public final class Column {
     }
 
     public boolean hasPattern() {
-        return pattern != null && !pattern.isBlank();
+        return pattern != null && pattern.startsWith("filldb");
     }
 
 }

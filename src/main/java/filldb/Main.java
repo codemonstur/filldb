@@ -1,5 +1,6 @@
 package filldb;
 
+import filldb.error.NoSuchGenerator;
 import filldb.model.CliArguments;
 import jcli.errors.InvalidCommandLine;
 
@@ -11,7 +12,7 @@ import static jcli.CliParserBuilder.newCliParser;
 
 public enum Main {;
 
-    public static void main(final String... args) throws SQLException, InvalidCommandLine {
+    public static void main(final String... args) throws SQLException, InvalidCommandLine, NoSuchGenerator {
         final CliArguments arguments = newCliParser(CliArguments::new)
             .onErrorPrintHelpAndExit()
             .onHelpPrintHelpAndExit()

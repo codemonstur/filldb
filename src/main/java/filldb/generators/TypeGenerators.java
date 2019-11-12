@@ -2,11 +2,10 @@ package filldb.generators;
 
 import com.mifmif.common.regex.Generex;
 import com.mifmif.common.regex.util.Iterator;
-import filldb.model.Value;
 import filldb.model.Column;
+import filldb.model.Value;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 
 import static filldb.core.Constants.LORUM_IPSUM;
@@ -15,12 +14,18 @@ import static filldb.generators.ValueGenerator.newValueGenerator;
 import static java.lang.Math.random;
 import static java.lang.Math.round;
 import static java.lang.String.format;
+import static java.util.Map.entry;
 
 public enum TypeGenerators {;
 
-    public static List<ValueGenerator> newTypeGenerators() {
-        return Arrays.asList(newBigIntGenerator(), newBitGenerator(), newIntGenerator(),
-            newVarCharGenerator(), newTextGenerator());
+    public static Map<String, ValueGenerator> newTypeGenerators() {
+        return Map.ofEntries
+            ( entry("bigint", newBigIntGenerator())
+            , entry("bit", newBitGenerator())
+            , entry("int", newIntGenerator())
+            , entry("varchar", newVarCharGenerator())
+            , entry("text", newTextGenerator())
+            );
     }
 
     public static ValueGenerator newTextGenerator() {

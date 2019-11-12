@@ -2,7 +2,7 @@ package filldb.generators;
 
 import filldb.model.Column;
 
-import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 
 public interface ValueGenerator {
@@ -10,8 +10,8 @@ public interface ValueGenerator {
     boolean canGenerateFor(Column column);
     ValueSetter newValueSetter(Column column);
 
-    static ValueGenerator detectGenerator(final List<ValueGenerator> list, final Column column, final ValueGenerator defaultValue) {
-        for (final ValueGenerator generator : list) {
+    static ValueGenerator detectGenerator(final Map<String, ValueGenerator> list, final Column column, final ValueGenerator defaultValue) {
+        for (final ValueGenerator generator : list.values()) {
             if (generator.canGenerateFor(column))
                 return generator;
         }

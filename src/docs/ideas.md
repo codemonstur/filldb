@@ -30,9 +30,4 @@
 - Use transcripts for movies as lorum ipsum
 - Use movie songs as lorum ipsum
 - Use poems as lorum ipsum
-- Be tolerant of already used comments for columns
-  Only use the comment if is says one of these:
-  - 'filldb pattern \[regular expression]'
-  - 'filldb enum one,two,three,four'
-  - 'filldb ipsum name-of-ipsum'
 - Custom generators
