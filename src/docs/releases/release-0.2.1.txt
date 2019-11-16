@@ -1,0 +1,6 @@
+0.2.1
+
+Added quoting of table and column names
+Added generator/ipsum/enum/pattern comment types
+Added data type detection for generating insert queries
+Added better CLI help output
