@@ -50,3 +50,5 @@
   https://www.public-domain-poetry.com
   https://lib.ku.edu/databases-by-subject/poetry
 - Custom generators
+
+http://programmingexcuses.com
