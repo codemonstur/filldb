@@ -1,0 +1,34 @@
+version: 0.2.1
+dependencies:
+  - repository: com.github.codemonstur:jcli:0.9.5
+  - repository: org.mariadb.jdbc:mariadb-java-client:2.5.1
+  - repository: com.github.mifmif:generex:1.0.2
+  - repository: com.thedeanda:lorem:2.1
+  - repository: com.squareup.okhttp3:okhttp:4.2.2
+  - repository: org.jsoup:jsoup:1.12.1
+
+release-notes
+	  echo "[${PROJECT_NAME}] Writing release notes to src/docs/releases/release-${PROJECT_VERSION}.txt"
+	  echo "${PROJECT_VERSION}" > src/docs/releases/release-${PROJECT_VERSION}.txt
+	  echo "" >> src/docs/releases/release-${PROJECT_VERSION}.txt
+	  PREVIOUS_TAG = `git tag | sort -r | head -n 1`
+	  git log --pretty="%s" ${PREVIOUS_TAG}... master >> src/docs/releases/release-${PROJECT_VERSION}.txt
+
+deploy
+    run-target build
+	  echo "[${PROJECT_NAME}] Tagging and pushing to github"
+	  git tag ${PROJECT_NAME}-${PROJECT_VERSION}
+	  git push && git push --tags
+	  echo "[${PROJECT_NAME}] Creating github release"
+	  hub release create -a target/${PROJECT_NAME}-${PROJECT_VERSION}.jar -F src/docs/releases/release-${PROJECT_VERSION}.txt ${PROJECT_NAME}-${PROJECT_VERSION}
+
+install
+    run-target build
+	  sudo cp target/${PROJECT_NAME}.jar /usr/local/bin
+	  sudo chmod +x /usr/local/bin/${PROJECT_NAME}.jar
+
+test
+    run-target install
+	  echo "[${PROJECT_NAME}] Testing"
+	  URL = jdbc:mariadb://localhost:3306/filldb
+	  java -jar target/${PROJECT_NAME}-${PROJECT_VERSION}.jar -c ${URL} -r -d -s -i --allow-remote --allow-humor --allow-nsfw
