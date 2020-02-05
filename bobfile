@@ -4,7 +4,6 @@ dependencies:
   - repository: org.mariadb.jdbc:mariadb-java-client:2.5.1
   - repository: com.github.mifmif:generex:1.0.2
   - repository: com.thedeanda:lorem:2.1
-  - repository: com.squareup.okhttp3:okhttp:4.2.2
   - repository: org.jsoup:jsoup:1.12.1
 
 release-notes
