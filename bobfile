@@ -6,6 +6,10 @@ dependencies:
   - repository: com.thedeanda:lorem:2.1
   - repository: org.jsoup:jsoup:1.12.1
 
+build
+	  echo "[${PROJECT_NAME}] Building"
+    run-target -i build
+
 release-notes
 	  echo "[${PROJECT_NAME}] Writing release notes to src/docs/releases/release-${PROJECT_VERSION}.txt"
 	  echo "${PROJECT_VERSION}" > src/docs/releases/release-${PROJECT_VERSION}.txt
