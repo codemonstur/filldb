@@ -1,11 +1,11 @@
 package filldb.generators;
 
-import okhttp3.OkHttpClient;
-
 import java.io.IOException;
+import java.net.http.HttpClient;
 import java.util.Map;
 
 import static filldb.generators.RemoteLorums.*;
+import static java.net.http.HttpClient.newHttpClient;
 import static java.util.Map.entry;
 
 public interface LorumIpsumGenerator {
@@ -13,7 +13,7 @@ public interface LorumIpsumGenerator {
     String getIpsum() throws IOException;
 
     static Map<String, LorumIpsumGenerator> newLorumIpsumGenerators() {
-        final OkHttpClient client = new OkHttpClient();
+        final HttpClient client = newHttpClient();
         return Map.ofEntries
             ( entry("bible", newBibleIpsum(client))
             , entry("bluth", newBluthIpsum(client))

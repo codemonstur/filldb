@@ -1,28 +1,31 @@
 package filldb.generators;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.ResponseBody;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.http.HttpResponse.BodyHandlers;
 import java.util.List;
 import java.util.function.Supplier;
 
 import static filldb.core.Util.*;
+import static java.net.http.HttpClient.newHttpClient;
 import static java.util.Arrays.asList;
 
 public enum Images {;
 
     public interface ImageGenerator {
-        byte[] getImage(final OkHttpClient client) throws IOException;
+        byte[] getImage(final HttpClient client) throws IOException;
     }
 
     public static Supplier<byte[]> newRandomImageGenerator(final boolean allowRemote, final boolean allowHumor, final boolean allowNSFW) {
-        final OkHttpClient client = new OkHttpClient();
+        final HttpClient client = newHttpClient();
 
         final List<ImageGenerator> remote =
             asList(Images::getLifeLooselyBased, Images::getPhdComics, Images::getUserFriendly
@@ -55,12 +58,12 @@ public enum Images {;
         };
     }
 
-    public static byte[] getKowalsky(final OkHttpClient client) {
+    public static byte[] getKowalsky(final HttpClient client) {
         try {
             return resourceAsBytes("/images/kowalski.png");
         } catch (IOException e) { return null; }
     }
-    public static byte[] getUnderConstruction(final OkHttpClient client) {
+    public static byte[] getUnderConstruction(final HttpClient client) {
         try {
             return resourceAsBytes("/images/under-construction.jpg");
         } catch (IOException e) { return null; }
@@ -71,7 +74,7 @@ public enum Images {;
         String extractImageLink(Document document) throws IOException;
     }
 
-    public static byte[] getLifeLooselyBased(final OkHttpClient client) throws IOException {
+    public static byte[] getLifeLooselyBased(final HttpClient client) throws IOException {
         final String site = "LifeLooselyBased";
         // FIXME only some of the IDs between 1 and 200 lead to an image, we could list them all
         // now we throw an error, let the retry deal with it
@@ -84,7 +87,7 @@ public enum Images {;
             document -> toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
-    public static byte[] getUserFriendly(final OkHttpClient client) throws IOException {
+    public static byte[] getUserFriendly(final HttpClient client) throws IOException {
         final String site = "UserFriendly";
         final String url = "http://www.userfriendly.org/";
         final String imgPrefix = "http://www.userfriendly.org/cartoons/archives/";
@@ -94,7 +97,7 @@ public enum Images {;
             document -> toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
-    public static byte[] getDilbert(final OkHttpClient client) throws IOException {
+    public static byte[] getDilbert(final HttpClient client) throws IOException {
         final String site = "Dilbert";
         final String url = "https://dilbert.com/";
         final String imgPrefix = "//assets.amuniversal.com/";
@@ -104,22 +107,22 @@ public enum Images {;
                 document -> "https:" + toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
-    public static byte[] getOglaf(final OkHttpClient client) throws IOException {
+    public static byte[] getOglaf(final HttpClient client) throws IOException {
         final String site = "Oglaf";
         final String url = "https://www.oglaf.com/";
         final String imgPrefix = "https://media.oglaf.com/comic/";
         final String cssSelector = "#strip";
 
-        final Request request = new Request.Builder()
-            .url(url)
+        final HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create(url))
             .header("Cookie", "AGE_CONFIRMED=yes")
-            .get().build();
+            .GET().build();
 
         return linkToBytes(client, site, parsePageBody(client, site, request,
             document -> toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
-    public static byte[] getXkcd(final OkHttpClient client) throws IOException {
+    public static byte[] getXkcd(final HttpClient client) throws IOException {
         final String site = "XKCD";
         final String url = "https://xkcd.com/";
         final String imgPrefix = "//imgs.xkcd.com/comics/";
@@ -129,7 +132,7 @@ public enum Images {;
             document -> "https:" + toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
-    public static byte[] getKopozky(final OkHttpClient client) throws IOException {
+    public static byte[] getKopozky(final HttpClient client) throws IOException {
         final String site = "Kopozky";
         final String url = "https://kopozky.net/";
         final String imgPrefix = "img/";
@@ -144,7 +147,7 @@ public enum Images {;
         return thumbLink;
     }
 
-    public static byte[] getOkCancel(final OkHttpClient client) throws IOException {
+    public static byte[] getOkCancel(final HttpClient client) throws IOException {
         final String site = "OkCancel";
         final int comicId = randomInt(178);
         final String url = "http://okcancel.com/comic/"+comicId+".html";
@@ -159,7 +162,7 @@ public enum Images {;
     // this code works in the sense that it gets the image, however the process fails
     // to end and hangs forever. I'm guessing some thread is still busy doing stuff, but
     // I don't know where or why
-    public static byte[] getPennyArcade(final OkHttpClient client) throws IOException {
+    public static byte[] getPennyArcade(final HttpClient client) throws IOException {
         final String site = "PennyArcade";
         final String url = "https://www.penny-arcade.com/comic";
         final String imgPrefix = "https://photos.smugmug.com/photos/";
@@ -169,7 +172,7 @@ public enum Images {;
                 document -> toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
-    public static byte[] getCommitStrip(final OkHttpClient client) throws IOException {
+    public static byte[] getCommitStrip(final HttpClient client) throws IOException {
         final String site = "CommitStrip";
         final int comicId = randomInt(59)+2;
         final String pagesUrl = "http://www.commitstrip.com/en/page/"+comicId+"/";
@@ -195,7 +198,7 @@ public enum Images {;
     // this code works in the sense that it gets the image, however the process fails
     // to end and hangs forever. I'm guessing some thread is still busy doing stuff, but
     // I don't know where or why
-    public static byte[] getMonkeyUser(final OkHttpClient client) throws IOException {
+    public static byte[] getMonkeyUser(final HttpClient client) throws IOException {
         final String site = "MonkeyUser";
         final String url = "https://www.monkeyuser.com/";
         final String imgPrefix = "https://www.monkeyuser.com/assets/images/";
@@ -205,7 +208,7 @@ public enum Images {;
                 document -> toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
-    public static byte[] getAbstruseGoose(final OkHttpClient client) throws IOException {
+    public static byte[] getAbstruseGoose(final HttpClient client) throws IOException {
         final String site = "AbstruseGoose";
         final String url = "https://abstrusegoose.com/";
         final String imgPrefix = "https://abstrusegoose.com/strips/";
@@ -215,7 +218,7 @@ public enum Images {;
                 document -> toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
-    public static byte[] getPhdComics(final OkHttpClient client) throws IOException {
+    public static byte[] getPhdComics(final HttpClient client) throws IOException {
         final String site = "PhdComics";
         final String url = "http://phdcomics.com/";
         final String imgPrefix = "http://www.phdcomics.com/comics/archive/";
@@ -233,30 +236,35 @@ public enum Images {;
         throw new IOException("Couldn't find the webcomic image");
     }
 
-    private static Request newUrlRequest(final String url) {
-        return new Request.Builder().url(url).get().build();
+    private static HttpRequest newUrlRequest(final String url) {
+        return HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
     }
 
-    private static String parsePageBody(final OkHttpClient client, final String site, final String url, final PageParser parser) throws IOException {
+    private static String parsePageBody(final HttpClient client, final String site, final String url
+            , final PageParser parser) throws IOException {
         return parsePageBody(client, site, newUrlRequest(url), parser);
     }
-    private static String parsePageBody(final OkHttpClient client, final String site, final Request request, final PageParser parser) throws IOException {
-        System.out.println(request.url().toString());
-        try (final var response = client.newCall(request).execute()) {
-            if (!response.isSuccessful()) throw new IOException(site + " did not respond");
-            final ResponseBody body = response.body();
+    private static String parsePageBody(final HttpClient client, final String site, final HttpRequest request, final PageParser parser) throws IOException {
+        try {
+            final HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+            if (response.statusCode() < 200 && response.statusCode() > 299) throw new IOException(site + " returned wrong status code " + response.statusCode());
+            final String body = response.body();
             if (body == null) throw new IOException(site + " returned empty body");
-            return parser.extractImageLink(Jsoup.parse(body.string()));
+            return parser.extractImageLink(Jsoup.parse(body));
+        } catch (InterruptedException e) {
+            throw new IOException("Interrupted while downloading " + request.uri());
         }
     }
 
-    private static byte[] linkToBytes(final OkHttpClient client, final String site, final String url) throws IOException {
-        System.out.println(url);
-        try (final var response = client.newCall(newUrlRequest(url)).execute()) {
-            if (!response.isSuccessful()) throw new IOException(site + " did not respond");
-            final ResponseBody body = response.body();
-            if (body == null) throw new IOException(site + " returned empty body for image");
-            return body.bytes();
+    private static byte[] linkToBytes(final HttpClient client, final String site, final String url) throws IOException {
+        try {
+            final HttpResponse<byte[]> response = client.send(newUrlRequest(url), BodyHandlers.ofByteArray());
+            if (response.statusCode() < 200 || response.statusCode() > 299) throw new IOException(site + " returned wrong status code " + response.statusCode());
+            final byte[] body = response.body();
+            if (body == null) throw new IOException(site + " returned empty body");
+            return body;
+        } catch (InterruptedException e) {
+            throw new IOException("Interrupted while downloading " + url);
         }
     }
 }
