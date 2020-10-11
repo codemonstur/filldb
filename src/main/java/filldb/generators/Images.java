@@ -26,7 +26,6 @@ public enum Images {;
 
     public static Supplier<byte[]> newRandomImageGenerator(final boolean allowRemote, final boolean allowHumor, final boolean allowNSFW) {
         final HttpClient client = newHttpClient();
-
         final List<ImageGenerator> remote =
             asList(Images::getLifeLooselyBased, Images::getPhdComics, Images::getUserFriendly
                 , Images::getDilbert, Images::getXkcd, Images::getKopozky, Images::getOkCancel
