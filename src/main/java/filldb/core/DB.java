@@ -1,7 +1,7 @@
 package filldb.core;
 
+import com.mysql.cj.jdbc.Driver;
 import filldb.model.CliArguments;
-import org.mariadb.jdbc.Driver;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -18,8 +18,7 @@ public enum DB {;
     }
 
     public static Connection connect(final String jdbcUrl, final Properties properties) throws SQLException {
-        final Driver driver = new Driver();
-        return driver.connect(jdbcUrl, properties);
+        return new Driver().connect(jdbcUrl, properties);
     }
 
     public static void executeQueries(final Connection connection, final List<String> queries) throws SQLException {

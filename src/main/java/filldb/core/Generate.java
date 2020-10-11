@@ -1,6 +1,5 @@
 package filldb.core;
 
-import com.mifmif.common.regex.Generex;
 import filldb.error.NoSuchGenerator;
 import filldb.generators.LorumIpsumGenerator;
 import filldb.generators.ValueGenerator;
@@ -9,6 +8,7 @@ import filldb.model.CliArguments;
 import filldb.model.Column;
 import filldb.model.ForeignKey;
 import filldb.model.Table;
+import genregex.Generex;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

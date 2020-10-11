@@ -1,9 +1,9 @@
 package filldb.generators;
 
-import com.mifmif.common.regex.Generex;
 import com.thedeanda.lorem.Lorem;
 import com.thedeanda.lorem.LoremIpsum;
 import filldb.model.Column;
+import genregex.Generex;
 
 import java.io.ByteArrayInputStream;
 import java.text.DateFormat;
