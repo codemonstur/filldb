@@ -52,52 +52,72 @@ public enum DataGenerators {;
         map.put("image", newImageGenerator(allowHumor, allowRemote, allowNSFW));
         map.put("large text", newLargeTextGenerator(allowHumor, allowRemote));
         map.put("short text", newShortTextGenerator(allowHumor));
+        map.put("latitude", newLatitudeGenerator());
+        map.put("longitude", newLongitudeGenerator());
         return map;
     }
 
-    public static ValueGenerator newAddressGenerator() {
+    private static ValueGenerator newLatitudeGenerator() {
+        final Function<Column, Boolean> canGenerateFor = column -> {
+            if (!"decimal".equals(column.dataType)) return false;
+            return column.name.contains("latitude");
+        };
+        return newValueGenerator("Random Latitude", canGenerateFor,
+            column -> (index, statement) -> statement.setDouble(index, (Math.random() * 180) - 90.0));
+    }
+
+    private static ValueGenerator newLongitudeGenerator() {
+        final Function<Column, Boolean> canGenerateFor = column -> {
+            if (!"decimal".equals(column.dataType)) return false;
+            return column.name.contains("longitude");
+        };
+        return newValueGenerator("Random Longitude", canGenerateFor,
+            column -> (index, statement) -> statement.setDouble(index, (Math.random() * 360) - 180.0));
+    }
+
+    private static ValueGenerator newAddressGenerator() {
         final List<String> streetNames = resourceToLines("/lists/streets.txt");
         return newValueGenerator("Addresses", newLengthAndAllWordCheck(20, "address"),
             column -> (index, statement) -> statement.setString(index,
                 abbreviate(randomItemFrom(streetNames)+" "+randomInt(9)+1, column.characterMaxLength)));
     }
 
-    public static ValueGenerator newStreetGenerator() {
+    private static ValueGenerator newStreetGenerator() {
         final List<String> streetNames = resourceToLines("/lists/streets.txt");
         return newValueGenerator("Street names", newLengthAndAllWordCheck(20, "street"),
             column -> (index, statement) -> statement.setString(index,
                 abbreviate(randomItemFrom(streetNames), column.characterMaxLength)));
     }
 
-    public static ValueGenerator newCityGenerator() {
+    private static ValueGenerator newCityGenerator() {
         final Lorem lorem = LoremIpsum.getInstance();
         return newValueGenerator("City names", newLengthAndAllWordCheck(20, "city"),
             column -> (index, statement) -> statement.setString(index,
                 abbreviate(lorem.getCity(), column.characterMaxLength)));
     }
 
-    public static ValueGenerator newStateGenerator() {
+    private static ValueGenerator newStateGenerator() {
         final Lorem lorem = LoremIpsum.getInstance();
         return newValueGenerator("State names", newLengthAndAllWordCheck(20, "state"),
             column -> (index, statement) -> statement.setString(index,
                 abbreviate(lorem.getStateFull(), column.characterMaxLength)));
     }
 
-    public static ValueGenerator newCountryGenerator() {
+    private static ValueGenerator newCountryGenerator() {
         final Lorem lorem = LoremIpsum.getInstance();
         return newValueGenerator("Country names", newLengthAndAllWordCheck(20, "country"),
             column -> (index, statement) -> statement.setString(index,
                 abbreviate(lorem.getCountry(), column.characterMaxLength)));
     }
 
-    public static ValueGenerator newEmailGenerator() {
+    private static ValueGenerator newEmailGenerator() {
         final Lorem lorem = LoremIpsum.getInstance();
         return newValueGenerator("email addresses", newLengthAndAllWordCheck(20, "email"),
             column -> (index, statement) -> statement.setString(index,
                 abbreviate(lorem.getEmail(), column.characterMaxLength)));
     }
 
-    public static ValueGenerator newPhoneGenerator() {
+    private static ValueGenerator newPhoneGenerator() {
         final Function<Column, Boolean> canGenerateFor = column -> {
             if (!"varchar".equals(column.dataType)) return false;
             if (column.characterMaxLength == null || column.characterMaxLength < 20) return false;
@@ -110,7 +130,7 @@ public enum DataGenerators {;
                 abbreviate(lorem.getPhone(), column.characterMaxLength)));
     }
 
-    public static ValueGenerator newPhoneNumberGenerator() {
+    private static ValueGenerator newPhoneNumberGenerator() {
         final Function<Column, Boolean> canGenerateFor = column -> {
             if (!"int".equals(column.dataType) && !"bigint".equals(column.dataType)) return false;
             return column.name.contains("phone");
@@ -121,35 +141,35 @@ public enum DataGenerators {;
             (index, statement) -> statement.setLong(index, toNumber(lorem.getPhone())));
     }
 
-    public static ValueGenerator newFullNameGenerator() {
+    private static ValueGenerator newFullNameGenerator() {
         final Lorem lorem = LoremIpsum.getInstance();
         return newValueGenerator("Full names", newLengthAndAllWordCheck(20, "name"),
             column -> (index, statement) -> statement.setString(index,
                 abbreviate(lorem.getName(), column.characterMaxLength)));
     }
 
-    public static ValueGenerator newFirstNameGenerator() {
+    private static ValueGenerator newFirstNameGenerator() {
         final Lorem lorem = LoremIpsum.getInstance();
         return newValueGenerator("First names", newLengthAndAllWordCheck(10, "first", "name"),
             column -> (index, statement) -> statement.setString(index,
                 abbreviate(lorem.getFirstName(), column.characterMaxLength)));
     }
 
-    public static ValueGenerator newMiddleNameGenerator() {
+    private static ValueGenerator newMiddleNameGenerator() {
         final List<String> middleNames = resourceToLines("/lists/middle-names.txt");
         return newValueGenerator("Middle names", newLengthAndAllWordCheck(10, "middle", "name"),
             column -> (index, statement) -> statement.setString(index,
                 abbreviate(randomItemFrom(middleNames), column.characterMaxLength)));
     }
 
-    public static ValueGenerator newLastNameGenerator() {
+    private static ValueGenerator newLastNameGenerator() {
         final Lorem lorem = LoremIpsum.getInstance();
         return newValueGenerator("Last names", newLengthAndAllWordCheck(10, "last", "name"),
             column -> (index, statement) -> statement.setString(index,
                 abbreviate(lorem.getLastName(), column.characterMaxLength)));
     }
 
-    public static ValueGenerator newDomainGenerator() {
+    private static ValueGenerator newDomainGenerator() {
         final List<String> topDomains = resourceToLines("/lists/top-domains.txt");
         final List<String> allDomains = resourceToLines("/lists/domains.txt");
 
@@ -167,7 +187,7 @@ public enum DataGenerators {;
         });
     }
 
-    public static ValueGenerator newUriGenerator(final boolean allowHumor) {
+    private static ValueGenerator newUriGenerator(final boolean allowHumor) {
         final List<String> timewaste = resourceToLines("/lists/timewastelinks.txt");
         final List<String> youtube = resourceToLines("/lists/youtube.txt");
         final Lorem lorem = LoremIpsum.getInstance();
@@ -181,7 +201,7 @@ public enum DataGenerators {;
             });
     }
 
-    public static ValueGenerator newHexGenerator() {
+    private static ValueGenerator newHexGenerator() {
         final var randomStart = Double.toString(round(random()*1000));
         final var generator = new Generex(randomStart+"[a-zA-Z]{1,30}").iterator();
         final var canGenerateFor = newLengthAndAnyWordCheck(32, "hex", "salt", "password", "id");
@@ -191,7 +211,7 @@ public enum DataGenerators {;
                 hexHash(generator.next(), column.characterMaxLength)));
     }
 
-    public static ValueGenerator newAgeGenerator() {
+    private static ValueGenerator newAgeGenerator() {
         final Function<Column, Boolean> canGenerateFor = column -> {
             if (!"int".equals(column.dataType) && !"bigint".equals(column.dataType)) return false;
             return column.name.contains("age");
@@ -201,7 +221,7 @@ public enum DataGenerators {;
             (index, statement) -> statement.setLong(index, round(random()*95)));
     }
 
-    public static ValueGenerator newDateGenerator() {
+    private static ValueGenerator newDateGenerator() {
         final Function<Column, Boolean> canGenerateFor = column -> {
             if (!"varchar".equals(column.dataType)) return false;
             if (column.characterMaxLength == null || column.characterMaxLength != 10) return false;
@@ -214,7 +234,7 @@ public enum DataGenerators {;
                 yyyy_mm_dd.format(new Date(substractSomeTime(currentTimeMillis())))));
     }
 
-    public static ValueGenerator newDateOfBirthGenerator() {
+    private static ValueGenerator newDateOfBirthGenerator() {
         final Function<Column, Boolean> canGenerateFor = column -> {
             if (!"varchar".equals(column.dataType)) return false;
             if (column.characterMaxLength == null || column.characterMaxLength != 10) return false;
@@ -228,7 +248,7 @@ public enum DataGenerators {;
                         substractSomeTime(currentTimeMillis()))))));
     }
 
-    public static ValueGenerator newTimestampGenerator() {
+    private static ValueGenerator newTimestampGenerator() {
         final Function<Column, Boolean> canGenerateFor = column -> {
             if (!"bigint".equals(column.dataType)) return false;
             final String columnName = column.name.toLowerCase();
@@ -240,7 +260,7 @@ public enum DataGenerators {;
                 substractSomeTime(currentTimeMillis())));
     }
 
-    public static ValueGenerator newJobGenerator() {
+    private static ValueGenerator newJobGenerator() {
         final var jobs = resourceToLines("/lists/jobs.txt");
         final var canGenerateFor = newLengthAndAnyWordCheck(16,
                 "job", "vacancy", "position", "role", "profession");
@@ -250,7 +270,7 @@ public enum DataGenerators {;
                 abbreviate(capitalize(randomItemFrom(jobs)), column.characterMaxLength)));
     }
 
-    public static ValueGenerator newShortTextGenerator(final boolean allowHumor) {
+    private static ValueGenerator newShortTextGenerator(final boolean allowHumor) {
         final List<String> jokes = resourceToLines("/lists/jokes.txt");
         final List<String> insults = resourceToLines("/lists/insults.txt");
         final List<String> attacks = resourceToLines("/lists/all-attacks.txt");
@@ -269,7 +289,7 @@ public enum DataGenerators {;
         });
     }
 
-    public static ValueGenerator newLargeTextGenerator(final boolean allowHumor, final boolean allowRemote) {
+    private static ValueGenerator newLargeTextGenerator(final boolean allowHumor, final boolean allowRemote) {
         final var local = newRandomLocalIpsumGenerator();
         final var remote = newRandomRemoteIpsumGenerator();
 
@@ -282,7 +302,7 @@ public enum DataGenerators {;
         });
     }
 
-    public static ValueGenerator newImageGenerator(final boolean allowHumor, final boolean allowRemote, final boolean allowNSFW) {
+    private static ValueGenerator newImageGenerator(final boolean allowHumor, final boolean allowRemote, final boolean allowNSFW) {
         final Function<Column, Boolean> canGenerateFor = column -> {
             if (!"longblob".equals(column.dataType)) return false;
             return column.name.contains("image") || column.name.contains("picture");

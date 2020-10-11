@@ -10,6 +10,7 @@ import java.util.function.Function;
 
 import static filldb.core.Constants.LORUM_IPSUM;
 import static filldb.core.Util.isTrue;
+import static filldb.core.Util.randomInt;
 import static filldb.generators.ValueGenerator.newValueGenerator;
 import static java.lang.Math.random;
 import static java.lang.Math.round;
@@ -25,6 +26,7 @@ public enum TypeGenerators {;
             , entry("int", newIntGenerator())
             , entry("varchar", newVarCharGenerator())
             , entry("text", newTextGenerator())
+            , entry("decimal", newDecimalGenerator())
             );
     }
 
@@ -90,4 +92,9 @@ public enum TypeGenerators {;
             (index, statement) -> statement.setBoolean(index, isTrue(round(random()))));
     }
 
+    public static ValueGenerator newDecimalGenerator() {
+        final Function<Column, Boolean> canGenerateFor = column -> "decimal".equals(column.dataType);
+        return newValueGenerator("Fallback decimal", canGenerateFor, column ->
+            (index, statement) -> statement.setInt(index, randomInt(50)));
+    }
 }
