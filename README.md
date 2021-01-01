@@ -34,7 +34,7 @@ There is a command line switch that allows you to ignore errors so that the inse
 
 ### Future features
 
-There are some listed in `src/main/docs/ideas.md`.
+There are some listed in `src/docs/ideas.md`.
 More ideas are welcome.
 As are bugs, comments and anything else really.
 
