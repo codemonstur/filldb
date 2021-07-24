@@ -1,10 +1,10 @@
 package filldb.generators;
 
-import com.mifmif.common.regex.Generex;
-import com.mifmif.common.regex.util.Iterator;
 import filldb.model.Column;
 import filldb.model.Value;
+import genregex.Generex;
 
+import java.util.Iterator;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -46,7 +46,7 @@ public enum TypeGenerators {;
             if (!column.isUnique) {
                 return (index, statement) -> statement.setString(index, generator.random());
             } else {
-                final Iterator it = generator.iterator();
+                final Iterator<String> it = generator.iterator();
                 return (index, statement) -> {
                     if (!it.hasNext())
                         throw new IllegalArgumentException("Not possible to generate additional values for column " + column.name + " with type " + column.dataType);
