@@ -2,7 +2,6 @@ include https://raw.githubusercontent.com/codemonstur/bobfiles/master/foss-lib-g
 include https://raw.githubusercontent.com/codemonstur/bobfiles/master/install-local-bin-linux
 
 version: 3
-release: 11
 dependencies:
   - repository: com.github.codemonstur:jcli:1.3.0
   - repository: mysql:mysql-connector-java:8.0.30
