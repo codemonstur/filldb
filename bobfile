@@ -4,10 +4,10 @@ include https://raw.githubusercontent.com/codemonstur/bobfiles/master/install-lo
 version: 3
 dependencies:
   - repository: com.github.codemonstur:jcli:1.5.1
-  - repository: mysql:mysql-connector-java:8.0.33
+  - repository: com.mysql:mysql-connector-j:8.3.0
   - repository: com.github.mifmif:generex:1.0.2
   - repository: com.thedeanda:lorem:2.2
-  - repository: org.jsoup:jsoup:1.16.1
+  - repository: org.jsoup:jsoup:1.17.2
 
 test
     info [${PROJECT_NAME}] Clean and build for test
