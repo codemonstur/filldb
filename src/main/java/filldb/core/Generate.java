@@ -8,7 +8,7 @@ import filldb.model.CliArguments;
 import filldb.model.Column;
 import filldb.model.ForeignKey;
 import filldb.model.Table;
-import genregex.Generex;
+import com.mifmif.common.regex.Generex;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,0 +1,293 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.codemonstur</groupId>
+    <artifactId>filldb</artifactId>
+    <version>3</version>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>A tool for filling a mariadb database with test data</description>
+    <url>https://github.com/codemonstur/filldb</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/codemonstur/filldb.git</connection>
+        <developerConnection>scm:git:https://github.com/codemonstur/filldb.git</developerConnection>
+        <url>https://github.com/codemonstur/filldb</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>codemonstur</id>
+            <name>Jurgen Voorneveld</name>
+            <email>jegvoorneveld@gmail.com</email>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.mainClass>filldb.Main</project.mainClass>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.release>11</maven.compiler.release>
+
+        <version.library.bobthebuildtool>12</version.library.bobthebuildtool>
+        <version.library.jcli>1.5.2</version.library.jcli>
+        <version.library.mysql>8.3.0</version.library.mysql>
+        <version.library.generex>1.0.2</version.library.generex>
+        <version.library.lorem>2.2</version.library.lorem>
+        <version.library.jsoup>1.17.2</version.library.jsoup>
+
+        <version.plugin.check-cves>1.1.0</version.plugin.check-cves>
+        <version.plugin.compiler>3.16.0</version.plugin.compiler>
+        <version.plugin.enforcer>3.6.3</version.plugin.enforcer>
+        <version.plugin.gpg>3.2.8</version.plugin.gpg>
+        <version.plugin.jar>3.5.1</version.plugin.jar>
+        <version.plugin.javadoc>3.12.0</version.plugin.javadoc>
+        <version.plugin.license-check>1.3.0</version.plugin.license-check>
+        <version.plugin.publish>0.12.0</version.plugin.publish>
+        <version.plugin.shade>3.6.0</version.plugin.shade>
+        <version.plugin.source>3.4.0</version.plugin.source>
+    </properties>
+
+    <profiles>
+
+        <profile>
+            <id>licenses</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>com.github.codemonstur</groupId>
+                        <artifactId>maven-check-license</artifactId>
+                        <version>${version.plugin.license-check}</version>
+                        <executions>
+                            <execution><goals><goal>check</goal></goals></execution>
+                        </executions>
+                        <configuration>
+                            <includeTestDependencies>true</includeTestDependencies>
+                            <rules>
+                                <rule>url:equal:http://www.opensource.org/licenses/bsd-license.php</rule>
+                                <rule>url:equal:http://opensource.org/licenses/BSD-3-Clause</rule>
+                                <rule>url:regex:(http|https)://(www.)?opensource.org/licenses/(MIT|mit-license.php)</rule>
+                                <rule>name:equal:The MIT License</rule>
+                                <rule>url:equal:https://opensource.org/license/mit</rule>
+                                <rule>name:regex:(The )?Apache(\s|-)(Software )?(License |License, )?(Version |version )?2\.0</rule>
+                                <rule>url:equal:http://www.eclipse.org/legal/epl-v10.html</rule>
+                                <rule>name:equal:Eclipse Public License 1.0</rule>
+                                <rule>url:equal:http://www.eclipse.org/org/documents/edl-v10.php</rule>
+                                <rule>url:equal:http://www.mozilla.org/MPL/2.0/</rule>
+                            </rules>
+                        </configuration>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>vulnerabilities</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.codemonstur</groupId>
+                        <artifactId>maven-check-cves</artifactId>
+                        <version>${version.plugin.check-cves}</version>
+                        <executions>
+                            <execution><goals><goal>check</goal></goals></execution>
+                        </executions>
+                        <configuration>
+                            <includeTestDependencies>true</includeTestDependencies>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>${version.plugin.enforcer}</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven-version</id>
+                        <goals><goal>enforce</goal></goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>[3.6.3,)</version>
+                                    <message>This project requires Maven 3.6.3 or newer to build</message>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${version.plugin.jar}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- Turns the built jar into the same executable fat jar that bob builds,
+                 including the Bob-Plugin-Class entry that makes it usable as a bob plugin. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${version.plugin.shade}</version>
+                <executions>
+                    <execution>
+                        <id>shade</id>
+                        <phase>package</phase>
+                        <goals><goal>shade</goal></goals>
+                        <configuration>
+                            <finalName>${project.artifactId}</finalName>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>module-info.class</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <Main-Class>${project.mainClass}</Main-Class>
+                                        <Bob-Plugin-Class>filldb.BobPlugin</Bob-Plugin-Class>
+                                        <Implementation-Title>${project.artifactId}</Implementation-Title>
+                                        <Implementation-Version>${project.version}</Implementation-Version>
+                                        <Implementation-Vendor>${project.groupId}</Implementation-Vendor>
+                                    </manifestEntries>
+                                </transformer>
+                            </transformers>
+                            <minimizeJar>false</minimizeJar>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${version.plugin.source}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals><goal>jar</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${version.plugin.javadoc}</version>
+                <configuration>
+                    <additionalOptions>-Xdoclint:all -Xdoclint:-missing</additionalOptions>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals><goal>jar</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>${version.plugin.gpg}</version>
+                <configuration>
+                    <passphrase>${gpg.passphrase}</passphrase>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals><goal>sign</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>${version.plugin.publish}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <autoPublish>true</autoPublish>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <!-- Only needed to compile the bob plugin integration, never shipped. -->
+        <dependency>
+            <groupId>com.github.codemonstur</groupId>
+            <artifactId>bobthebuildtool</artifactId>
+            <version>${version.library.bobthebuildtool}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.codemonstur</groupId>
+            <artifactId>jcli</artifactId>
+            <version>${version.library.jcli}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>${version.library.mysql}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.mifmif</groupId>
+            <artifactId>generex</artifactId>
+            <version>${version.library.generex}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.thedeanda</groupId>
+            <artifactId>lorem</artifactId>
+            <version>${version.library.lorem}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${version.library.jsoup}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

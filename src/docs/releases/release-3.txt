@@ -1,3 +1,7 @@
 3
 
 Updated version
+
+Merged the bob plugin into this project: the filldb jar is now also a bob plugin.
+Use it by adding `plugin codemonstur/filldb:3` to your bobfile, replacing
+`plugin codemonstur/filldb-bobplugin:3`.

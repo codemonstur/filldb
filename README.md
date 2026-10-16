@@ -46,3 +46,25 @@ As are bugs, comments and anything else really.
 5. \[Optional] Create an alias `alias filldb='java -jar /usr/local/bin/filldb.jar'`
 
 The code requires Java 11.
+
+Building from source uses [bob](https://github.com/codemonstur/bobthebuildtool) and requires
+a checkout of [bobthebuildtool](https://github.com/codemonstur/bobthebuildtool) as a sibling
+directory; it is used as a provided dependency for the bob plugin integration described below.
+
+### Usage as a bob plugin
+
+The filldb jar doubles as a [bob](https://github.com/codemonstur/bobthebuildtool) plugin.
+Add this line to the top of your bobfile:
+
+```
+plugin codemonstur/filldb:3
+```
+
+The `filldb` command is then available in all your bob tasks:
+
+```
+deploy-database
+    filldb -c jdbc:mariadb://localhost:3306/filldb -r -d -s -i
+```
+
+This replaces the old [filldb-bobplugin](https://github.com/codemonstur/filldb-bobplugin) plugin.
