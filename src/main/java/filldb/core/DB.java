@@ -1,6 +1,6 @@
 package filldb.core;
 
-import com.mysql.cj.jdbc.Driver;
+import org.mariadb.jdbc.Driver;
 import filldb.model.CliArguments;
 
 import java.sql.Connection;

@@ -41,7 +41,7 @@
 
         <version.library.bobthebuildtool>12</version.library.bobthebuildtool>
         <version.library.jcli>1.5.2</version.library.jcli>
-        <version.library.mysql>8.3.0</version.library.mysql>
+        <version.library.mariadb>3.5.2</version.library.mariadb>
         <version.library.generex>1.0.2</version.library.generex>
         <version.library.lorem>2.2</version.library.lorem>
         <version.library.jsoup>1.17.2</version.library.jsoup>
@@ -80,6 +80,9 @@
                             <rules>
                                 <rule>url:equal:http://www.opensource.org/licenses/bsd-license.php</rule>
                                 <rule>url:equal:http://opensource.org/licenses/BSD-3-Clause</rule>
+                                <rule>url:equal:https://opensource.org/licenses/BSD-3-Clause</rule>
+                                <rule>name:equal:BSD-3-Clause</rule>
+                                <rule>name:regex:.*LGPL.*</rule>
                                 <rule>url:regex:(http|https)://(www.)?opensource.org/licenses/(MIT|mit-license.php)</rule>
                                 <rule>name:equal:The MIT License</rule>
                                 <rule>url:equal:https://opensource.org/license/mit</rule>
@@ -211,12 +214,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${version.plugin.javadoc}</version>
-                <configuration>
-                    <additionalOptions>-Xdoclint:all -Xdoclint:-missing</additionalOptions>
-                </configuration>
-                <executions>
+                                <executions>
                     <execution>
                         <id>attach-javadocs</id>
+                        <phase>deploy</phase>
                         <goals><goal>jar</goal></goals>
                     </execution>
                 </executions>
@@ -268,9 +269,9 @@
             <version>${version.library.jcli}</version>
         </dependency>
         <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>${version.library.mysql}</version>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>${version.library.mariadb}</version>
         </dependency>
         <dependency>
             <groupId>com.github.mifmif</groupId>
