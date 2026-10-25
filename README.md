@@ -40,7 +40,7 @@ As are bugs, comments and anything else really.
 ### Installation
 
 1. Check out the code `git clone https://github.com/codemonstur/filldb.git`
-2. Run `make install`
+2. Run `bob install`
 3. You can now run the code with `java -jar target/filldb.jar`
 4. \[Optional] Copy the code to `/usr/local/bin`
 5. \[Optional] Create an alias `alias filldb='java -jar /usr/local/bin/filldb.jar'`

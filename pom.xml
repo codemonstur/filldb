@@ -47,6 +47,7 @@
         <version.library.jsoup>1.17.2</version.library.jsoup>
 
         <version.plugin.check-cves>1.1.0</version.plugin.check-cves>
+        <version.plugin.codegrade>0.2.0</version.plugin.codegrade>
         <version.plugin.compiler>3.16.0</version.plugin.compiler>
         <version.plugin.enforcer>3.6.3</version.plugin.enforcer>
         <version.plugin.gpg>3.2.8</version.plugin.gpg>
@@ -120,6 +121,28 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <id>codequality</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>com.github.codemonstur</groupId>
+                        <artifactId>codegrade-maven-plugin</artifactId>
+                        <version>${version.plugin.codegrade}</version>
+                        <executions>
+                            <execution><goals><goal>check</goal></goals></execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+
     </profiles>
 
     <build>
