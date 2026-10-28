@@ -42,7 +42,7 @@
         <version.library.bobthebuildtool>12</version.library.bobthebuildtool>
         <version.library.generex>1.0.2</version.library.generex>
         <version.library.jcli>1.5.2</version.library.jcli>
-        <version.library.jsoup>1.17.2</version.library.jsoup>
+        <version.library.jsoup>1.23.2</version.library.jsoup>
         <version.library.lorem>2.2</version.library.lorem>
         <version.library.mariadb>3.5.2</version.library.mariadb>
 
