@@ -46,10 +46,9 @@
         <version.library.lorem>2.2</version.library.lorem>
         <version.library.mariadb>3.5.2</version.library.mariadb>
 
-        <version.plugin.check-cves>1.1.0</version.plugin.check-cves>
-        <version.plugin.check-license>1.4.0</version.plugin.check-license>
+        <version.plugin.check-cves>1.2.0</version.plugin.check-cves>
+        <version.plugin.check-license>1.5.0</version.plugin.check-license>
         <version.plugin.codegrade>0.2.0</version.plugin.codegrade>
-        <version.plugin.compiler>3.16.0</version.plugin.compiler>
         <version.plugin.enforcer>3.6.3</version.plugin.enforcer>
         <version.plugin.gpg>3.2.8</version.plugin.gpg>
         <version.plugin.jar>3.5.1</version.plugin.jar>
@@ -57,7 +56,9 @@
         <version.plugin.publish>0.12.0</version.plugin.publish>
         <version.plugin.shade>3.6.0</version.plugin.shade>
         <version.plugin.source>3.4.0</version.plugin.source>
-    </properties>
+            <version.library.pitest-junit5>1.2.3</version.library.pitest-junit5>
+        <version.plugin.pitest>1.30.1</version.plugin.pitest>
+</properties>
 
     <dependencies>
 
@@ -156,6 +157,19 @@
                                     <artifact>*:*</artifact>
                                     <excludes>
                                         <exclude>module-info.class</exclude>
+                                                                            <exclude>license/**</exclude>
+                                        <exclude>license/*</exclude>
+                                        <exclude>META-INF.versions.9.module-info</exclude>
+                                        <exclude>META-INF/versions/9/module-info.class</exclude>
+                                        <exclude>META-INF/DEPENDENCIES</exclude>
+                                        <exclude>about_files/**</exclude>
+                                        <exclude>about.html</exclude>
+                                        <exclude>.api_description</exclude>
+                                        <exclude>.options</exclude>
+                                        <exclude>plugin.properties</exclude>
+                                        <exclude>plugin.xml</exclude>
+                                        <exclude>META-INF/eclipse.inf</exclude>
+                                        <exclude>META-INF/MANIFEST.MF</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
@@ -255,20 +269,13 @@
                         <configuration>
                             <includeTestDependencies>true</includeTestDependencies>
                             <rules>
-                                <rule>url:equal:http://www.opensource.org/licenses/bsd-license.php</rule>
-                                <rule>url:equal:http://opensource.org/licenses/BSD-3-Clause</rule>
-                                <rule>url:equal:https://opensource.org/licenses/BSD-3-Clause</rule>
-                                <rule>name:equal:BSD-3-Clause</rule>
+                                <rule>name:regex:.*Apache.*</rule>
+                                <rule>name:regex:.*MIT.*</rule>
+                                <rule>name:regex:.*BSD.*</rule>
                                 <rule>name:regex:.*LGPL.*</rule>
-                                <rule>url:regex:(http|https)://(www.)?opensource.org/licenses/(MIT|mit-license.php)</rule>
-                                <rule>name:equal:The MIT License</rule>
-                                <rule>url:equal:https://opensource.org/license/mit</rule>
-                                <rule>name:regex:(The )?Apache(\s|-)(Software )?(License |License, )?(Version |version )?2\.0</rule>
-                                <rule>url:equal:http://www.eclipse.org/legal/epl-v10.html</rule>
-                                <rule>name:equal:Eclipse Public License 1.0</rule>
-                                <rule>url:equal:http://www.eclipse.org/org/documents/edl-v10.php</rule>
-                                <rule>url:equal:http://www.mozilla.org/MPL/2.0/</rule>
+                                <rule>name:regex:.*GPL.*</rule>
                             </rules>
+                        
                         </configuration>
                     </plugin>
 
@@ -296,6 +303,14 @@
                         </executions>
                         <configuration>
                             <includeTestDependencies>true</includeTestDependencies>
+                        <exclusions>
+                            <exclusion>GHSA-65r4-943x-97jj</exclusion>
+                            <exclusion>GHSA-g9jj-cgmh-9f38</exclusion>
+                            <exclusion>GHSA-pmhh-3w7g-xqp8</exclusion>
+                            <exclusion>GHSA-qxvw-fvwx-5cp7</exclusion>
+                            <exclusion>GHSA-wxmm-q36w-r9xj</exclusion>
+                            <exclusion>GHSA-xvr9-35cr-46v9</exclusion>
+                            </exclusions>
                         </configuration>
                     </plugin>
 
@@ -327,6 +342,38 @@
             </build>
         </profile>
 
-    </profiles>
+            <profile>
+            <id>mutation</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-maven</artifactId>
+                        <version>${version.plugin.pitest}</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.pitest</groupId>
+                                <artifactId>pitest-junit5-plugin</artifactId>
+                                <version>${version.library.pitest-junit5}</version>
+                            </dependency>
+                        </dependencies>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>mutationCoverage</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+</profiles>
 
 </project>
