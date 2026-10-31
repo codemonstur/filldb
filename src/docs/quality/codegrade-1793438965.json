@@ -1,0 +1,1238 @@
+{
+  "target": "/home/jurgen/projects/tools/filldb",
+  "files": 32,
+  "unixTimestamp": 1793438969,
+  "iso8601": "2026-10-31T09:29:29.486962795Z",
+  "generatedAt": "Saturday, October 31, 2026 09:29:29 UTC",
+  "durationMillis": 475,
+  "duration": "475 ms",
+  "score": 93.5,
+  "checks": [
+    {
+      "id": "long-file",
+      "description": "Files should stay under 150 lines, counting Javadoc as one",
+      "filesChecked": 32,
+      "filesFailing": 6,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Generate.java",
+          "line": 255
+        },
+        {
+          "path": "src/main/java/filldb/core/Schema.java",
+          "line": 171
+        },
+        {
+          "path": "src/main/java/filldb/core/Util.java",
+          "line": 190
+        },
+        {
+          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "line": 339
+        },
+        {
+          "path": "src/main/java/filldb/generators/Images.java",
+          "line": 270
+        },
+        {
+          "path": "src/main/java/filldb/generators/RemoteLorums.java",
+          "line": 309
+        }
+      ]
+    },
+    {
+      "id": "long-line",
+      "description": "Lines should stay under 120 characters",
+      "filesChecked": 32,
+      "filesFailing": 8,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Generate.java",
+          "line": 53
+        },
+        {
+          "path": "src/main/java/filldb/core/Schema.java",
+          "line": 32
+        },
+        {
+          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "line": 305
+        },
+        {
+          "path": "src/main/java/filldb/generators/Images.java",
+          "line": 27
+        },
+        {
+          "path": "src/main/java/filldb/generators/RemoteLorums.java",
+          "line": 116
+        },
+        {
+          "path": "src/main/java/filldb/generators/TypeGenerators.java",
+          "line": 42
+        },
+        {
+          "path": "src/main/java/filldb/generators/ValueGenerator.java",
+          "line": 13
+        },
+        {
+          "path": "src/main/java/filldb/model/CliArguments.java",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "id": "blank-lines",
+      "description": "Avoid multiple consecutive blank lines",
+      "filesChecked": 32,
+      "filesFailing": 5,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Generate.java",
+          "line": 43
+        },
+        {
+          "path": "src/main/java/filldb/core/Schema.java",
+          "line": 59
+        },
+        {
+          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "line": 315
+        },
+        {
+          "path": "src/main/java/filldb/generators/Images.java",
+          "line": 70
+        },
+        {
+          "path": "src/main/java/filldb/generators/ValueGenerator.java",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "id": "trailing-whitespace",
+      "description": "Lines should not have trailing whitespace",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "tab-indent",
+      "description": "Indent with spaces, not tabs",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "newline-eof",
+      "description": "Files should end with a newline",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "empty-file",
+      "description": "Files should not be empty",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "star-imports",
+      "description": "Avoid wildcard (star) imports",
+      "filesChecked": 32,
+      "filesFailing": 8,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/FillDb.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/Util.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/Images.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/LocalLorums.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/LorumIpsumGenerator.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/TestHashLength.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/incubation/BIC.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "unused-imports",
+      "description": "Remove unused imports",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "class-name-case",
+      "description": "Class names should be PascalCase",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "method-name-case",
+      "description": "Method/field names should be camelCase",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "exception-name",
+      "description": "Exceptions should not end in Exception",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "oop-name",
+      "description": "Avoid OOP-role suffixes in class names",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "long-names",
+      "description": "Avoid overly long class/method names",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "single-letter-var",
+      "description": "Avoid single-letter variable names",
+      "filesChecked": 32,
+      "filesFailing": 2,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Generate.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/Util.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "constant-naming",
+      "description": "static final fields should be UPPER_SNAKE_CASE",
+      "filesChecked": 32,
+      "filesFailing": 2,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Util.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/incubation/BIC.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "boolean-method-name",
+      "description": "Boolean methods should start with is/has/can/should",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "default-package",
+      "description": "Classes should declare a package",
+      "filesChecked": 32,
+      "filesFailing": 2,
+      "violations": [
+        {
+          "path": "src/test/java/TestCountOccurance.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/TestHashLength.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "reverse-dns-package",
+      "description": "Avoid reverse-DNS style package names",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "long-method",
+      "description": "Methods should stay under 50 lines",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "too-many-parameters",
+      "description": "Methods should take at most 5 parameters",
+      "filesChecked": 32,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Generate.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "deep-nesting",
+      "description": "Avoid deeply nested blocks (max 4)",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "high-complexity",
+      "description": "Methods should stay under cyclomatic complexity 10",
+      "filesChecked": 32,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Generate.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "many-returns",
+      "description": "Avoid methods with too many returns",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "else-if-chain",
+      "description": "Avoid long else-if chains",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "enhanced-for",
+      "description": "Use enhanced for-loops over index loops",
+      "filesChecked": 32,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Generate.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "inner-class-depth",
+      "description": "Avoid deeply nested classes",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "large-class",
+      "description": "Classes should stay under 40 methods+fields",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "too-many-public-methods",
+      "description": "Classes should have at most 10 public methods",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "public-mutable-field",
+      "description": "Avoid public non-final fields",
+      "filesChecked": 32,
+      "filesFailing": 5,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/model/CliArguments.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/model/Column.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/model/ForeignKey.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/model/Table.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/model/Value.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "mutable-static",
+      "description": "Avoid non-final static fields",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "missing-equals-hashcode",
+      "description": "Override equals and hashCode together",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "getters-setters",
+      "description": "Avoid getters and setters (expose behavior, not state)",
+      "filesChecked": 32,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/generators/LorumIpsumGenerator.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "boolean-parameter",
+      "description": "Avoid boolean parameters",
+      "filesChecked": 32,
+      "filesFailing": 4,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Generate.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/Schema.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/Images.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "string-equality",
+      "description": "Compare Strings with .equals, not \u003d\u003d",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "space-indent",
+      "description": "Indent with an even number of spaces",
+      "filesChecked": 32,
+      "filesFailing": 3,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Schema.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/Images.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/RemoteLorums.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "license-header",
+      "description": "Avoid license boilerplate at the top of files",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "final-parameters",
+      "description": "Method parameters should be declared final",
+      "filesChecked": 32,
+      "filesFailing": 3,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/generators/Images.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/ValueGenerator.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/ValueSetter.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "magic-number",
+      "description": "Avoid magic numbers",
+      "filesChecked": 32,
+      "filesFailing": 6,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Util.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/Images.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/LocalLorums.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/RemoteLorums.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/TypeGenerators.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "deprecated-api",
+      "description": "Avoid deprecated constructors/APIs",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "suppress-warnings",
+      "description": "Avoid @SuppressWarnings",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "missing-javadoc",
+      "description": "Public classes/methods should have Javadoc",
+      "filesChecked": 32,
+      "filesFailing": 30,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/BobPlugin.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/FillDb.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/Main.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/DB.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/Generate.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/HTTP.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/Schema.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/Util.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/error/NoSuchGenerator.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/Images.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/LocalLorums.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/LorumIpsumGenerator.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/RemoteLorums.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/TypeGenerators.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/ValueGenerator.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/ValueSetter.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/model/CliArguments.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/model/Column.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/model/ForeignKey.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/model/Table.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/model/Value.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/TestCountOccurance.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/TestHashLength.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/incubation/BIC.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/incubation/CountryCode.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/incubation/CreditCard.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/incubation/IBAN.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/incubation/PostalCode.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/incubation/VIN.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "author-tag",
+      "description": "Avoid @author tags",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "private-field-javadoc",
+      "description": "Avoid Javadoc on private fields",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "empty-catch",
+      "description": "Avoid empty catch blocks",
+      "filesChecked": 32,
+      "filesFailing": 3,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/generators/Images.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/LocalLorums.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/RemoteLorums.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "empty-finally",
+      "description": "Avoid empty finally blocks",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "empty-method",
+      "description": "Avoid empty method bodies",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "catch-general",
+      "description": "Avoid catching broad Exception/Throwable",
+      "filesChecked": 32,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Generate.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "return-null",
+      "description": "Avoid returning null",
+      "filesChecked": 32,
+      "filesFailing": 4,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Schema.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/Util.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/generators/Images.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/incubation/CreditCard.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "switch-fallthrough",
+      "description": "Avoid switch case fall-through",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "switch-default",
+      "description": "Switch statements should have a default",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "optional-get",
+      "description": "Avoid Optional.get() without isPresent()",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "raw-types",
+      "description": "Avoid raw generic types",
+      "filesChecked": 32,
+      "filesFailing": 5,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Generate.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/HTTP.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/Schema.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/Util.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/model/Table.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "print-stack-trace",
+      "description": "Avoid printStackTrace()",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "system-out",
+      "description": "Avoid System.out/err (use a logger)",
+      "filesChecked": 32,
+      "filesFailing": 5,
+      "violations": [
+        {
+          "path": "src/build/CoverageSummary.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/FillDb.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/Generate.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/TestCountOccurance.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/TestHashLength.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "commented-out-code",
+      "description": "Avoid commented-out code",
+      "filesChecked": 32,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "src/test/java/incubation/BIC.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "todo-fixme",
+      "description": "No leftover TODO/FIXME/XXX markers",
+      "filesChecked": 32,
+      "filesFailing": 2,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/generators/Images.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/incubation/CountryCode.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "hardcoded-secret",
+      "description": "Avoid hardcoded secrets/credentials",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "weak-hash",
+      "description": "Avoid weak hash algorithms (MD5/SHA1)",
+      "filesChecked": 32,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/core/Util.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "sql-concat",
+      "description": "Avoid SQL string concatenation",
+      "filesChecked": 32,
+      "filesFailing": 2,
+      "violations": [
+        {
+          "path": "src/main/java/filldb/FillDb.java",
+          "line": -1
+        },
+        {
+          "path": "src/main/java/filldb/core/Schema.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "test-no-assertions",
+      "description": "Test methods should contain assertions",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "thread-sleep-test",
+      "description": "Avoid Thread.sleep in tests",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "ignored-test",
+      "description": "Avoid @Ignore/@Disabled tests",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "empty-test",
+      "description": "Avoid empty test methods",
+      "filesChecked": 32,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "unused-private",
+      "description": "Remove unused private fields/methods",
+      "filesChecked": 32,
+      "filesFailing": 2,
+      "violations": [
+        {
+          "path": "src/test/java/incubation/BIC.java",
+          "line": -1
+        },
+        {
+          "path": "src/test/java/incubation/CountryCode.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "license",
+      "description": "Project must have a LICENSE file",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "readme",
+      "description": "Project must have a README file",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "build-file",
+      "description": "Project must have a build file (pom.xml or Gradle)",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "too-many-deps",
+      "description": "Keep dependencies under 20",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "snapshot-deps",
+      "description": "Avoid -SNAPSHOT/dynamic dependency versions",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "missing-dep-version",
+      "description": "Every dependency should declare a version",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "library-no-deps",
+      "description": "Libraries should have zero non-test dependencies (plugins exempt)",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "single-class-package",
+      "description": "Packages should contain more than one file",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "/home/jurgen/projects/tools/filldb",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "mixed-package",
+      "description": "A package should hold either files or sub-packages, not both",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "/home/jurgen/projects/tools/filldb",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "package-too-large",
+      "description": "Keep packages under 30 classes",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "circular-packages",
+      "description": "Avoid circular package dependencies",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "/home/jurgen/projects/tools/filldb",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "long-inheritance",
+      "description": "Avoid inheritance chains deeper than 3",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "no-tests",
+      "description": "Project should include tests",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "test-ratio",
+      "description": "Keep a reasonable test-to-source ratio",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "untested-classes",
+      "description": "Every main class should have a test",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "/home/jurgen/projects/tools/filldb",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "duplicated-code",
+      "description": "Avoid duplicated code blocks across files",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    }
+  ],
+  "metrics": [
+    {
+      "id": "loc",
+      "description": "Total physical lines",
+      "value": 2330
+    },
+    {
+      "id": "sloc",
+      "description": "Source lines, excluding blanks and comments",
+      "value": 1889
+    },
+    {
+      "id": "max-file-length",
+      "description": "Longest file, in lines",
+      "value": 339
+    },
+    {
+      "id": "cyclomatic-total",
+      "description": "Sum of cyclomatic complexity over all methods",
+      "value": 396
+    },
+    {
+      "id": "cyclomatic-mean",
+      "description": "Mean cyclomatic complexity per method",
+      "value": 2.0625
+    },
+    {
+      "id": "cyclomatic-max",
+      "description": "Highest cyclomatic complexity of any method",
+      "value": 11
+    },
+    {
+      "id": "max-nesting",
+      "description": "Deepest control-flow nesting, in blocks",
+      "value": 4
+    },
+    {
+      "id": "halstead-volume",
+      "description": "Halstead volume of the whole codebase",
+      "value": 51801.31878560046
+    },
+    {
+      "id": "comment-ratio",
+      "description": "Comment lines, percent of all lines",
+      "value": 1.3733905579399142
+    },
+    {
+      "id": "javadoc-coverage",
+      "description": "Public types and methods with Javadoc, percent",
+      "value": 1.492537313432836
+    },
+    {
+      "id": "parse-failure-rate",
+      "description": "Files that failed to parse, percent",
+      "value": 0
+    },
+    {
+      "id": "maintainability-index",
+      "description": "Maintainability index, 0-100",
+      "value": 85.39977608998076
+    },
+    {
+      "id": "package-instability",
+      "description": "Mean package instability Ce/(Ca+Ce), percent",
+      "value": 46.666666666666664
+    },
+    {
+      "id": "commits",
+      "description": "Commits in history",
+      "value": 78
+    },
+    {
+      "id": "churn",
+      "description": "Lines added and deleted across history",
+      "value": 165624
+    },
+    {
+      "id": "hotspot-index",
+      "description": "Highest churn times complexity of any file",
+      "value": 33496
+    }
+  ],
+  "categories": [
+    {
+      "name": "coverage",
+      "score": 66.7
+    },
+    {
+      "name": "documentation",
+      "score": 68.8
+    },
+    {
+      "name": "structure",
+      "score": 85.7
+    },
+    {
+      "name": "imports",
+      "score": 87.5
+    },
+    {
+      "name": "format",
+      "score": 91.5
+    },
+    {
+      "name": "dead code",
+      "score": 93.8
+    },
+    {
+      "name": "style",
+      "score": 93.8
+    },
+    {
+      "name": "noise",
+      "score": 93.8
+    },
+    {
+      "name": "control flow",
+      "score": 95.5
+    },
+    {
+      "name": "design",
+      "score": 96.1
+    },
+    {
+      "name": "security",
+      "score": 96.9
+    },
+    {
+      "name": "naming",
+      "score": 98.1
+    },
+    {
+      "name": "complexity",
+      "score": 98.8
+    },
+    {
+      "name": "duplication",
+      "score": 100.0
+    },
+    {
+      "name": "library",
+      "score": 100.0
+    },
+    {
+      "name": "dependencies",
+      "score": 100.0
+    },
+    {
+      "name": "project",
+      "score": 100.0
+    },
+    {
+      "name": "tests",
+      "score": 100.0
+    }
+  ]
+}

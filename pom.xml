@@ -36,13 +36,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.mainClass>filldb.Main</project.mainClass>
 
-        <maven.compiler.release>11</maven.compiler.release>
+        <maven.compiler.release>17</maven.compiler.release>
         <maven.version>[3.6.3,)</maven.version>
 
         <version.library.bobthebuildtool>12</version.library.bobthebuildtool>
         <version.library.generex>1.0.2</version.library.generex>
-        <version.library.jcli>1.5.2</version.library.jcli>
-        <version.library.jsoup>1.17.2</version.library.jsoup>
+        <version.library.jcli>2.0.0</version.library.jcli>
+        <version.library.jsoup>1.23.2</version.library.jsoup>
         <version.library.lorem>2.2</version.library.lorem>
         <version.library.mariadb>3.5.2</version.library.mariadb>
 
@@ -54,11 +54,15 @@
         <version.plugin.jar>3.5.1</version.plugin.jar>
         <version.plugin.javadoc>3.12.0</version.plugin.javadoc>
         <version.plugin.publish>0.12.0</version.plugin.publish>
-        <version.plugin.shade>3.6.0</version.plugin.shade>
+        <version.plugin.shade>3.6.2</version.plugin.shade>
         <version.plugin.source>3.4.0</version.plugin.source>
             <version.library.pitest-junit5>1.2.3</version.library.pitest-junit5>
         <version.plugin.pitest>1.30.1</version.plugin.pitest>
-</properties>
+        <!-- default for @{argLine}; jacoco's prepare-agent appends the agent when it runs -->
+        <argLine></argLine>
+            <version.plugin.jacoco>0.8.15</version.plugin.jacoco>
+            <version.plugin.surefire>3.6.0</version.plugin.surefire>
+    </properties>
 
     <dependencies>
 
@@ -104,6 +108,32 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${version.plugin.surefire}</version>
+                <configuration>
+                    <argLine>@{argLine} -Xshare:off</argLine>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${version.plugin.jacoco}</version>
+                <executions>
+                    <execution>
+                        <id>pre-unit-test</id>
+                        <goals><goal>prepare-agent</goal></goals>
+                    </execution>
+                    <execution>
+                        <id>post-unit-test</id>
+                        <phase>test</phase>
+                        <goals><goal>report</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
