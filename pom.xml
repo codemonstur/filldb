@@ -44,7 +44,7 @@
         <version.library.jcli>2.0.0</version.library.jcli>
         <version.library.jsoup>1.23.2</version.library.jsoup>
         <version.library.lorem>2.2</version.library.lorem>
-        <version.library.mariadb>3.5.2</version.library.mariadb>
+        <version.library.mariadb>3.5.11</version.library.mariadb>
 
         <version.plugin.check-cves>1.2.0</version.plugin.check-cves>
         <version.plugin.check-license>1.5.0</version.plugin.check-license>
