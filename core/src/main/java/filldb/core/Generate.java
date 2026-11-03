@@ -223,7 +223,7 @@ public enum Generate {;
                     final String value = resultSet.getString(columnList.get(i));
                     values[i] = columnShouldQuote.get(i) ? toQuotedString(value): value;
                 }
-                queries.add(String.format(insertQuery, values));
+                queries.add(String.format(insertQuery, (Object[]) values));
             }
 
         }

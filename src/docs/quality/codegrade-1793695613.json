@@ -1,9 +1,9 @@
 {
   "target": "/home/jurgen/projects/tools/filldb",
   "files": 32,
-  "unixTimestamp": 1793643052,
-  "iso8601": "2026-11-02T18:10:52.911411671Z",
-  "generatedAt": "Monday, November 2, 2026 18:10:52 UTC",
+  "unixTimestamp": 1793695617,
+  "iso8601": "2026-11-03T08:46:57.820284456Z",
+  "generatedAt": "Tuesday, November 3, 2026 08:46:57 UTC",
   "durationMillis": 516,
   "duration": "516 ms",
   "score": 93.5,
@@ -15,27 +15,27 @@
       "filesFailing": 6,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Generate.java",
+          "path": "core/src/main/java/filldb/core/Generate.java",
           "line": 255
         },
         {
-          "path": "src/main/java/filldb/core/Schema.java",
+          "path": "core/src/main/java/filldb/core/Schema.java",
           "line": 171
         },
         {
-          "path": "src/main/java/filldb/core/Util.java",
+          "path": "core/src/main/java/filldb/core/Util.java",
           "line": 190
         },
         {
-          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "path": "core/src/main/java/filldb/generators/DataGenerators.java",
           "line": 339
         },
         {
-          "path": "src/main/java/filldb/generators/Images.java",
+          "path": "core/src/main/java/filldb/generators/Images.java",
           "line": 270
         },
         {
-          "path": "src/main/java/filldb/generators/RemoteLorums.java",
+          "path": "core/src/main/java/filldb/generators/RemoteLorums.java",
           "line": 309
         }
       ]
@@ -47,35 +47,35 @@
       "filesFailing": 8,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Generate.java",
+          "path": "core/src/main/java/filldb/core/Generate.java",
           "line": 53
         },
         {
-          "path": "src/main/java/filldb/core/Schema.java",
+          "path": "core/src/main/java/filldb/core/Schema.java",
           "line": 32
         },
         {
-          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "path": "core/src/main/java/filldb/generators/DataGenerators.java",
           "line": 305
         },
         {
-          "path": "src/main/java/filldb/generators/Images.java",
+          "path": "core/src/main/java/filldb/generators/Images.java",
           "line": 27
         },
         {
-          "path": "src/main/java/filldb/generators/RemoteLorums.java",
+          "path": "core/src/main/java/filldb/generators/RemoteLorums.java",
           "line": 116
         },
         {
-          "path": "src/main/java/filldb/generators/TypeGenerators.java",
+          "path": "core/src/main/java/filldb/generators/TypeGenerators.java",
           "line": 42
         },
         {
-          "path": "src/main/java/filldb/generators/ValueGenerator.java",
+          "path": "core/src/main/java/filldb/generators/ValueGenerator.java",
           "line": 13
         },
         {
-          "path": "src/main/java/filldb/model/CliArguments.java",
+          "path": "core/src/main/java/filldb/model/CliArguments.java",
           "line": 11
         }
       ]
@@ -87,23 +87,23 @@
       "filesFailing": 5,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Generate.java",
+          "path": "core/src/main/java/filldb/core/Generate.java",
           "line": 43
         },
         {
-          "path": "src/main/java/filldb/core/Schema.java",
+          "path": "core/src/main/java/filldb/core/Schema.java",
           "line": 59
         },
         {
-          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "path": "core/src/main/java/filldb/generators/DataGenerators.java",
           "line": 315
         },
         {
-          "path": "src/main/java/filldb/generators/Images.java",
+          "path": "core/src/main/java/filldb/generators/Images.java",
           "line": 70
         },
         {
-          "path": "src/main/java/filldb/generators/ValueGenerator.java",
+          "path": "core/src/main/java/filldb/generators/ValueGenerator.java",
           "line": 33
         }
       ]
@@ -143,35 +143,35 @@
       "filesFailing": 8,
       "violations": [
         {
-          "path": "src/main/java/filldb/FillDb.java",
+          "path": "core/src/main/java/filldb/FillDb.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/Util.java",
+          "path": "core/src/main/java/filldb/core/Util.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "path": "core/src/main/java/filldb/generators/DataGenerators.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/Images.java",
+          "path": "core/src/main/java/filldb/generators/Images.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/LocalLorums.java",
+          "path": "core/src/main/java/filldb/generators/LocalLorums.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/LorumIpsumGenerator.java",
+          "path": "core/src/main/java/filldb/generators/LorumIpsumGenerator.java",
           "line": -1
         },
         {
-          "path": "src/test/java/TestHashLength.java",
+          "path": "core/src/test/java/TestHashLength.java",
           "line": -1
         },
         {
-          "path": "src/test/java/incubation/BIC.java",
+          "path": "core/src/test/java/incubation/BIC.java",
           "line": -1
         }
       ]
@@ -225,11 +225,11 @@
       "filesFailing": 2,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Generate.java",
+          "path": "core/src/main/java/filldb/core/Generate.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/Util.java",
+          "path": "core/src/main/java/filldb/core/Util.java",
           "line": -1
         }
       ]
@@ -241,11 +241,11 @@
       "filesFailing": 2,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Util.java",
+          "path": "core/src/main/java/filldb/core/Util.java",
           "line": -1
         },
         {
-          "path": "src/test/java/incubation/BIC.java",
+          "path": "core/src/test/java/incubation/BIC.java",
           "line": -1
         }
       ]
@@ -264,11 +264,11 @@
       "filesFailing": 2,
       "violations": [
         {
-          "path": "src/test/java/TestCountOccurance.java",
+          "path": "core/src/test/java/TestCountOccurance.java",
           "line": -1
         },
         {
-          "path": "src/test/java/TestHashLength.java",
+          "path": "core/src/test/java/TestHashLength.java",
           "line": -1
         }
       ]
@@ -294,7 +294,7 @@
       "filesFailing": 1,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Generate.java",
+          "path": "core/src/main/java/filldb/core/Generate.java",
           "line": -1
         }
       ]
@@ -313,7 +313,7 @@
       "filesFailing": 1,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Generate.java",
+          "path": "core/src/main/java/filldb/core/Generate.java",
           "line": -1
         }
       ]
@@ -339,7 +339,7 @@
       "filesFailing": 1,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Generate.java",
+          "path": "core/src/main/java/filldb/core/Generate.java",
           "line": -1
         }
       ]
@@ -372,23 +372,23 @@
       "filesFailing": 5,
       "violations": [
         {
-          "path": "src/main/java/filldb/model/CliArguments.java",
+          "path": "core/src/main/java/filldb/model/CliArguments.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/model/Column.java",
+          "path": "core/src/main/java/filldb/model/Column.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/model/ForeignKey.java",
+          "path": "core/src/main/java/filldb/model/ForeignKey.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/model/Table.java",
+          "path": "core/src/main/java/filldb/model/Table.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/model/Value.java",
+          "path": "core/src/main/java/filldb/model/Value.java",
           "line": -1
         }
       ]
@@ -414,7 +414,7 @@
       "filesFailing": 1,
       "violations": [
         {
-          "path": "src/main/java/filldb/generators/LorumIpsumGenerator.java",
+          "path": "core/src/main/java/filldb/generators/LorumIpsumGenerator.java",
           "line": -1
         }
       ]
@@ -426,19 +426,19 @@
       "filesFailing": 4,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Generate.java",
+          "path": "core/src/main/java/filldb/core/Generate.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/Schema.java",
+          "path": "core/src/main/java/filldb/core/Schema.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "path": "core/src/main/java/filldb/generators/DataGenerators.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/Images.java",
+          "path": "core/src/main/java/filldb/generators/Images.java",
           "line": -1
         }
       ]
@@ -457,15 +457,15 @@
       "filesFailing": 3,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Schema.java",
+          "path": "core/src/main/java/filldb/core/Schema.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/Images.java",
+          "path": "core/src/main/java/filldb/generators/Images.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/RemoteLorums.java",
+          "path": "core/src/main/java/filldb/generators/RemoteLorums.java",
           "line": -1
         }
       ]
@@ -484,15 +484,15 @@
       "filesFailing": 3,
       "violations": [
         {
-          "path": "src/main/java/filldb/generators/Images.java",
+          "path": "core/src/main/java/filldb/generators/Images.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/ValueGenerator.java",
+          "path": "core/src/main/java/filldb/generators/ValueGenerator.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/ValueSetter.java",
+          "path": "core/src/main/java/filldb/generators/ValueSetter.java",
           "line": -1
         }
       ]
@@ -504,27 +504,27 @@
       "filesFailing": 6,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Util.java",
+          "path": "core/src/main/java/filldb/core/Util.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "path": "core/src/main/java/filldb/generators/DataGenerators.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/Images.java",
+          "path": "core/src/main/java/filldb/generators/Images.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/LocalLorums.java",
+          "path": "core/src/main/java/filldb/generators/LocalLorums.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/RemoteLorums.java",
+          "path": "core/src/main/java/filldb/generators/RemoteLorums.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/TypeGenerators.java",
+          "path": "core/src/main/java/filldb/generators/TypeGenerators.java",
           "line": -1
         }
       ]
@@ -550,123 +550,123 @@
       "filesFailing": 30,
       "violations": [
         {
-          "path": "src/main/java/filldb/BobPlugin.java",
+          "path": "bobplugin/src/main/java/filldb/BobPlugin.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/FillDb.java",
+          "path": "cli/src/main/java/filldb/Main.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/Main.java",
+          "path": "core/src/main/java/filldb/FillDb.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/DB.java",
+          "path": "core/src/main/java/filldb/core/DB.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/Generate.java",
+          "path": "core/src/main/java/filldb/core/Generate.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/HTTP.java",
+          "path": "core/src/main/java/filldb/core/HTTP.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/Schema.java",
+          "path": "core/src/main/java/filldb/core/Schema.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/Util.java",
+          "path": "core/src/main/java/filldb/core/Util.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/error/NoSuchGenerator.java",
+          "path": "core/src/main/java/filldb/error/NoSuchGenerator.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/DataGenerators.java",
+          "path": "core/src/main/java/filldb/generators/DataGenerators.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/Images.java",
+          "path": "core/src/main/java/filldb/generators/Images.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/LocalLorums.java",
+          "path": "core/src/main/java/filldb/generators/LocalLorums.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/LorumIpsumGenerator.java",
+          "path": "core/src/main/java/filldb/generators/LorumIpsumGenerator.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/RemoteLorums.java",
+          "path": "core/src/main/java/filldb/generators/RemoteLorums.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/TypeGenerators.java",
+          "path": "core/src/main/java/filldb/generators/TypeGenerators.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/ValueGenerator.java",
+          "path": "core/src/main/java/filldb/generators/ValueGenerator.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/ValueSetter.java",
+          "path": "core/src/main/java/filldb/generators/ValueSetter.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/model/CliArguments.java",
+          "path": "core/src/main/java/filldb/model/CliArguments.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/model/Column.java",
+          "path": "core/src/main/java/filldb/model/Column.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/model/ForeignKey.java",
+          "path": "core/src/main/java/filldb/model/ForeignKey.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/model/Table.java",
+          "path": "core/src/main/java/filldb/model/Table.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/model/Value.java",
+          "path": "core/src/main/java/filldb/model/Value.java",
           "line": -1
         },
         {
-          "path": "src/test/java/TestCountOccurance.java",
+          "path": "core/src/test/java/TestCountOccurance.java",
           "line": -1
         },
         {
-          "path": "src/test/java/TestHashLength.java",
+          "path": "core/src/test/java/TestHashLength.java",
           "line": -1
         },
         {
-          "path": "src/test/java/incubation/BIC.java",
+          "path": "core/src/test/java/incubation/BIC.java",
           "line": -1
         },
         {
-          "path": "src/test/java/incubation/CountryCode.java",
+          "path": "core/src/test/java/incubation/CountryCode.java",
           "line": -1
         },
         {
-          "path": "src/test/java/incubation/CreditCard.java",
+          "path": "core/src/test/java/incubation/CreditCard.java",
           "line": -1
         },
         {
-          "path": "src/test/java/incubation/IBAN.java",
+          "path": "core/src/test/java/incubation/IBAN.java",
           "line": -1
         },
         {
-          "path": "src/test/java/incubation/PostalCode.java",
+          "path": "core/src/test/java/incubation/PostalCode.java",
           "line": -1
         },
         {
-          "path": "src/test/java/incubation/VIN.java",
+          "path": "core/src/test/java/incubation/VIN.java",
           "line": -1
         }
       ]
@@ -692,15 +692,15 @@
       "filesFailing": 3,
       "violations": [
         {
-          "path": "src/main/java/filldb/generators/Images.java",
+          "path": "core/src/main/java/filldb/generators/Images.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/LocalLorums.java",
+          "path": "core/src/main/java/filldb/generators/LocalLorums.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/RemoteLorums.java",
+          "path": "core/src/main/java/filldb/generators/RemoteLorums.java",
           "line": -1
         }
       ]
@@ -726,7 +726,7 @@
       "filesFailing": 1,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Generate.java",
+          "path": "core/src/main/java/filldb/core/Generate.java",
           "line": -1
         }
       ]
@@ -738,19 +738,19 @@
       "filesFailing": 4,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Schema.java",
+          "path": "core/src/main/java/filldb/core/Schema.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/Util.java",
+          "path": "core/src/main/java/filldb/core/Util.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/generators/Images.java",
+          "path": "core/src/main/java/filldb/generators/Images.java",
           "line": -1
         },
         {
-          "path": "src/test/java/incubation/CreditCard.java",
+          "path": "core/src/test/java/incubation/CreditCard.java",
           "line": -1
         }
       ]
@@ -783,23 +783,23 @@
       "filesFailing": 5,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Generate.java",
+          "path": "core/src/main/java/filldb/core/Generate.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/HTTP.java",
+          "path": "core/src/main/java/filldb/core/HTTP.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/Schema.java",
+          "path": "core/src/main/java/filldb/core/Schema.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/Util.java",
+          "path": "core/src/main/java/filldb/core/Util.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/model/Table.java",
+          "path": "core/src/main/java/filldb/model/Table.java",
           "line": -1
         }
       ]
@@ -818,23 +818,23 @@
       "filesFailing": 5,
       "violations": [
         {
-          "path": "src/build/CoverageSummary.java",
+          "path": "core/src/build/CoverageSummary.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/FillDb.java",
+          "path": "core/src/main/java/filldb/FillDb.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/Generate.java",
+          "path": "core/src/main/java/filldb/core/Generate.java",
           "line": -1
         },
         {
-          "path": "src/test/java/TestCountOccurance.java",
+          "path": "core/src/test/java/TestCountOccurance.java",
           "line": -1
         },
         {
-          "path": "src/test/java/TestHashLength.java",
+          "path": "core/src/test/java/TestHashLength.java",
           "line": -1
         }
       ]
@@ -846,7 +846,7 @@
       "filesFailing": 1,
       "violations": [
         {
-          "path": "src/test/java/incubation/BIC.java",
+          "path": "core/src/test/java/incubation/BIC.java",
           "line": -1
         }
       ]
@@ -858,11 +858,11 @@
       "filesFailing": 2,
       "violations": [
         {
-          "path": "src/main/java/filldb/generators/Images.java",
+          "path": "core/src/main/java/filldb/generators/Images.java",
           "line": -1
         },
         {
-          "path": "src/test/java/incubation/CountryCode.java",
+          "path": "core/src/test/java/incubation/CountryCode.java",
           "line": -1
         }
       ]
@@ -881,7 +881,7 @@
       "filesFailing": 1,
       "violations": [
         {
-          "path": "src/main/java/filldb/core/Util.java",
+          "path": "core/src/main/java/filldb/core/Util.java",
           "line": -1
         }
       ]
@@ -893,11 +893,11 @@
       "filesFailing": 2,
       "violations": [
         {
-          "path": "src/main/java/filldb/FillDb.java",
+          "path": "core/src/main/java/filldb/FillDb.java",
           "line": -1
         },
         {
-          "path": "src/main/java/filldb/core/Schema.java",
+          "path": "core/src/main/java/filldb/core/Schema.java",
           "line": -1
         }
       ]
@@ -937,11 +937,11 @@
       "filesFailing": 2,
       "violations": [
         {
-          "path": "src/test/java/incubation/BIC.java",
+          "path": "core/src/test/java/incubation/BIC.java",
           "line": -1
         },
         {
-          "path": "src/test/java/incubation/CountryCode.java",
+          "path": "core/src/test/java/incubation/CountryCode.java",
           "line": -1
         }
       ]
@@ -1083,12 +1083,12 @@
     {
       "id": "loc",
       "description": "Total physical lines",
-      "value": 2330
+      "value": 2341
     },
     {
       "id": "sloc",
       "description": "Source lines, excluding blanks and comments",
-      "value": 1889
+      "value": 1898
     },
     {
       "id": "max-file-length",
@@ -1098,12 +1098,12 @@
     {
       "id": "cyclomatic-total",
       "description": "Sum of cyclomatic complexity over all methods",
-      "value": 396
+      "value": 397
     },
     {
       "id": "cyclomatic-mean",
       "description": "Mean cyclomatic complexity per method",
-      "value": 2.0625
+      "value": 2.0677083333333335
     },
     {
       "id": "cyclomatic-max",
@@ -1118,12 +1118,12 @@
     {
       "id": "halstead-volume",
       "description": "Halstead volume of the whole codebase",
-      "value": 51801.31878560046
+      "value": 51926.37807241738
     },
     {
       "id": "comment-ratio",
       "description": "Comment lines, percent of all lines",
-      "value": 1.3733905579399142
+      "value": 1.3669372063220846
     },
     {
       "id": "javadoc-coverage",
@@ -1138,7 +1138,7 @@
     {
       "id": "maintainability-index",
       "description": "Maintainability index, 0-100",
-      "value": 85.39977608998076
+      "value": 84.8479360401163
     },
     {
       "id": "package-instability",
@@ -1148,17 +1148,12 @@
     {
       "id": "commits",
       "description": "Commits in history",
-      "value": 81
+      "value": 82
     },
     {
       "id": "churn",
       "description": "Lines added and deleted across history",
-      "value": 168188
-    },
-    {
-      "id": "hotspot-index",
-      "description": "Highest churn times complexity of any file",
-      "value": 33496
+      "value": 169428
     }
   ],
   "categories": [
@@ -1183,7 +1178,7 @@
       "score": 91.5
     },
     {
-      "name": "style",
+      "name": "noise",
       "score": 93.8
     },
     {
@@ -1191,7 +1186,7 @@
       "score": 93.8
     },
     {
-      "name": "noise",
+      "name": "style",
       "score": 93.8
     },
     {
@@ -1215,11 +1210,7 @@
       "score": 98.8
     },
     {
-      "name": "tests",
-      "score": 100.0
-    },
-    {
-      "name": "project",
+      "name": "library",
       "score": 100.0
     },
     {
@@ -1227,7 +1218,11 @@
       "score": 100.0
     },
     {
-      "name": "library",
+      "name": "project",
+      "score": 100.0
+    },
+    {
+      "name": "tests",
       "score": 100.0
     },
     {

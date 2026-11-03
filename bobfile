@@ -1,20 +1,9 @@
-include https://raw.githubusercontent.com/codemonstur/bobfiles/master/foss-lib-github
-include https://raw.githubusercontent.com/codemonstur/bobfiles/master/install-local-bin-linux
+include https://raw.githubusercontent.com/codemonstur/bobfiles/master/foss-lib-github-maven
 
+vendor: com.github.codemonstur
 version: 3
-release: 11
+packaging: jar
+enablePreview: false
 dependencies:
-  - project: ../bobthebuildtool
-    scope: provided
-  - repository: com.github.codemonstur:jcli:1.5.2
-  - repository: com.mysql:mysql-connector-j:8.3.0
-  - repository: com.github.mifmif:generex:1.0.2
-  - repository: com.thedeanda:lorem:2.2
-  - repository: org.jsoup:jsoup:1.17.2
-
-test
-    info [${PROJECT_NAME}] Clean and build for test
-    run-task -i clean build
-    info [${PROJECT_NAME}] Testing
-    URL = jdbc:mariadb://localhost:3306/filldb
-    java -jar target/${PROJECT_NAME}-${PROJECT_VERSION}.jar -c ${URL} -r -d -s -i --allow-remote --allow-humor --allow-nsfw
+  - repository: org.junit.jupiter:junit-jupiter:6.1.3
+    scope: test

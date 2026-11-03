@@ -5,6 +5,8 @@
     <artifactId>filldb</artifactId>
     <version>3</version>
 
+    <packaging>pom</packaging>
+
     <name>${project.groupId}:${project.artifactId}</name>
     <description>A tool for filling a mariadb database with test data</description>
     <url>https://github.com/codemonstur/filldb</url>
@@ -32,11 +34,15 @@
         </developer>
     </developers>
 
+    <modules>
+        <module>core</module>
+        <module>bobplugin</module>
+        <module>cli</module>
+    </modules>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.mainClass>filldb.Main</project.mainClass>
-
-        <maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.release>11</maven.compiler.release>
         <maven.version>[3.6.3,)</maven.version>
 
         <version.library.bobthebuildtool>12</version.library.bobthebuildtool>
@@ -45,69 +51,45 @@
         <version.library.jsoup>1.23.2</version.library.jsoup>
         <version.library.lorem>2.2</version.library.lorem>
         <version.library.mariadb>3.5.2</version.library.mariadb>
+        <version.library.junit>6.1.3</version.library.junit>
 
-        <version.plugin.check-cves>1.2.0</version.plugin.check-cves>
-        <version.plugin.check-license>1.5.0</version.plugin.check-license>
-        <version.plugin.codegrade>0.2.0</version.plugin.codegrade>
-        <version.plugin.enforcer>3.6.3</version.plugin.enforcer>
-        <version.plugin.gpg>3.2.8</version.plugin.gpg>
+        <version.plugin.compiler>3.16.0</version.plugin.compiler>
+        <version.plugin.surefire>3.6.0</version.plugin.surefire>
+        <version.plugin.jacoco>0.8.15</version.plugin.jacoco>
         <version.plugin.jar>3.5.1</version.plugin.jar>
-        <version.plugin.javadoc>3.12.0</version.plugin.javadoc>
-        <version.plugin.publish>0.12.0</version.plugin.publish>
-        <version.plugin.shade>3.6.2</version.plugin.shade>
-        <version.plugin.source>3.4.0</version.plugin.source>
-            <version.library.pitest-junit5>1.2.3</version.library.pitest-junit5>
-        <version.plugin.pitest>1.30.1</version.plugin.pitest>
-        <!-- default for @{argLine}; jacoco's prepare-agent appends the agent when it runs -->
         <argLine></argLine>
-            <version.plugin.jacoco>0.8.15</version.plugin.jacoco>
-            <version.plugin.surefire>3.6.0</version.plugin.surefire>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.github.codemonstur</groupId>
+                <artifactId>filldb-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
-
-        <!-- Only needed to compile the bob plugin integration, never shipped. -->
         <dependency>
-            <groupId>com.github.codemonstur</groupId>
-            <artifactId>bobthebuildtool</artifactId>
-            <version>${version.library.bobthebuildtool}</version>
-            <scope>provided</scope>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${version.library.junit}</version>
+            <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>com.github.codemonstur</groupId>
-            <artifactId>jcli</artifactId>
-            <version>${version.library.jcli}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
-            <artifactId>mariadb-java-client</artifactId>
-            <version>${version.library.mariadb}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.mifmif</groupId>
-            <artifactId>generex</artifactId>
-            <version>${version.library.generex}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.thedeanda</groupId>
-            <artifactId>lorem</artifactId>
-            <version>${version.library.lorem}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>${version.library.jsoup}</version>
-        </dependency>
-
     </dependencies>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version.plugin.compiler}</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <release>${maven.compiler.release}</release>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -116,294 +98,8 @@
                     <argLine>@{argLine} -Xshare:off</argLine>
                 </configuration>
             </plugin>
-
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${version.plugin.jacoco}</version>
-                <executions>
-                    <execution>
-                        <id>pre-unit-test</id>
-                        <goals><goal>prepare-agent</goal></goals>
-                    </execution>
-                    <execution>
-                        <id>post-unit-test</id>
-                        <phase>test</phase>
-                        <goals><goal>report</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>${version.plugin.enforcer}</version>
-                <executions>
-                    <execution>
-                        <id>enforce-maven-version</id>
-                        <goals><goal>enforce</goal></goals>
-                        <configuration>
-                            <rules>
-                                <requireMavenVersion>
-                                    <version>${maven.version}</version>
-                                    <message>This project requires Maven ${maven.version} to build</message>
-                                </requireMavenVersion>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>${version.plugin.jar}</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-
-            <!-- Turns the built jar into the same executable fat jar that bob builds,
-                 including the Bob-Plugin-Class entry that makes it usable as a bob plugin. -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>${version.plugin.shade}</version>
-                <executions>
-                    <execution>
-                        <id>shade</id>
-                        <phase>package</phase>
-                        <goals><goal>shade</goal></goals>
-                        <configuration>
-                            <finalName>${project.artifactId}</finalName>
-                            <filters>
-                                <filter>
-                                    <artifact>*:*</artifact>
-                                    <excludes>
-                                        <exclude>module-info.class</exclude>
-                                                                            <exclude>license/**</exclude>
-                                        <exclude>license/*</exclude>
-                                        <exclude>META-INF.versions.9.module-info</exclude>
-                                        <exclude>META-INF/versions/9/module-info.class</exclude>
-                                        <exclude>META-INF/DEPENDENCIES</exclude>
-                                        <exclude>about_files/**</exclude>
-                                        <exclude>about.html</exclude>
-                                        <exclude>.api_description</exclude>
-                                        <exclude>.options</exclude>
-                                        <exclude>plugin.properties</exclude>
-                                        <exclude>plugin.xml</exclude>
-                                        <exclude>META-INF/eclipse.inf</exclude>
-                                        <exclude>META-INF/MANIFEST.MF</exclude>
-                                    </excludes>
-                                </filter>
-                            </filters>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <manifestEntries>
-                                        <Main-Class>${project.mainClass}</Main-Class>
-                                        <Bob-Plugin-Class>filldb.BobPlugin</Bob-Plugin-Class>
-                                        <Implementation-Title>${project.artifactId}</Implementation-Title>
-                                        <Implementation-Version>${project.version}</Implementation-Version>
-                                        <Implementation-Vendor>${project.groupId}</Implementation-Vendor>
-                                    </manifestEntries>
-                                </transformer>
-                            </transformers>
-                            <minimizeJar>false</minimizeJar>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>${version.plugin.source}</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals><goal>jar</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${version.plugin.javadoc}</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <phase>deploy</phase>
-                        <goals><goal>jar</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>${version.plugin.gpg}</version>
-                <configuration>
-                    <passphrase>${gpg.passphrase}</passphrase>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals><goal>sign</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.sonatype.central</groupId>
-                <artifactId>central-publishing-maven-plugin</artifactId>
-                <version>${version.plugin.publish}</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <publishingServerId>central</publishingServerId>
-                    <autoPublish>true</autoPublish>
-                </configuration>
-            </plugin>
-
         </plugins>
     </build>
 
-    <profiles>
-
-        <profile>
-            <id>licenses</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-
-                    <plugin>
-                        <groupId>com.github.codemonstur</groupId>
-                        <artifactId>maven-check-license</artifactId>
-                        <version>${version.plugin.check-license}</version>
-                        <executions>
-                            <execution>
-                                <phase>verify</phase>
-                                <goals><goal>check</goal></goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <includeTestDependencies>true</includeTestDependencies>
-                            <rules>
-                                <rule>name:regex:.*Apache.*</rule>
-                                <rule>name:regex:.*MIT.*</rule>
-                                <rule>name:regex:.*BSD.*</rule>
-                                <rule>name:regex:.*LGPL.*</rule>
-                                <rule>name:regex:.*GPL.*</rule>
-                            </rules>
-                        
-                        </configuration>
-                    </plugin>
-
-                </plugins>
-            </build>
-        </profile>
-
-        <profile>
-            <id>vulnerabilities</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-
-                    <plugin>
-                        <groupId>com.github.codemonstur</groupId>
-                        <artifactId>maven-check-cves</artifactId>
-                        <version>${version.plugin.check-cves}</version>
-                        <executions>
-                            <execution>
-                                <phase>verify</phase>
-                                <goals><goal>check</goal></goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <includeTestDependencies>true</includeTestDependencies>
-                        <exclusions>
-                            <exclusion>GHSA-65r4-943x-97jj</exclusion>
-                            <exclusion>GHSA-g9jj-cgmh-9f38</exclusion>
-                            <exclusion>GHSA-pmhh-3w7g-xqp8</exclusion>
-                            <exclusion>GHSA-qxvw-fvwx-5cp7</exclusion>
-                            <exclusion>GHSA-wxmm-q36w-r9xj</exclusion>
-                            <exclusion>GHSA-xvr9-35cr-46v9</exclusion>
-                            </exclusions>
-                        </configuration>
-                    </plugin>
-
-                </plugins>
-            </build>
-        </profile>
-
-        <profile>
-            <id>codequality</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-
-                    <plugin>
-                        <groupId>com.github.codemonstur</groupId>
-                        <artifactId>codegrade-maven-plugin</artifactId>
-                        <version>${version.plugin.codegrade}</version>
-                        <executions>
-                            <execution>
-                                <phase>verify</phase>
-                                <goals><goal>check</goal></goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                </plugins>
-            </build>
-        </profile>
-
-            <profile>
-            <id>mutation</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-
-                    <plugin>
-                        <groupId>org.pitest</groupId>
-                        <artifactId>pitest-maven</artifactId>
-                        <version>${version.plugin.pitest}</version>
-                        <dependencies>
-                            <dependency>
-                                <groupId>org.pitest</groupId>
-                                <artifactId>pitest-junit5-plugin</artifactId>
-                                <version>${version.library.pitest-junit5}</version>
-                            </dependency>
-                        </dependencies>
-                        <executions>
-                            <execution>
-                                <phase>test</phase>
-                                <goals>
-                                    <goal>mutationCoverage</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                </plugins>
-            </build>
-        </profile>
-</profiles>
-
 </project>
+

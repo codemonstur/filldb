@@ -1,0 +1,44 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.codemonstur</groupId>
+        <artifactId>filldb</artifactId>
+        <version>3</version>
+    </parent>
+
+    <artifactId>filldb-core</artifactId>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Core logic of filldb.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.codemonstur</groupId>
+            <artifactId>jcli</artifactId>
+            <version>${version.library.jcli}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>${version.library.mariadb}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.mifmif</groupId>
+            <artifactId>generex</artifactId>
+            <version>${version.library.generex}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.thedeanda</groupId>
+            <artifactId>lorem</artifactId>
+            <version>${version.library.lorem}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${version.library.jsoup}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
+

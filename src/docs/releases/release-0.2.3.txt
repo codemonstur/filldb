@@ -1,3 +1,0 @@
-0.2.3
-
-Added decimal, latitude and longitude data generator

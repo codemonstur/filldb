@@ -1,0 +1,52 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.codemonstur</groupId>
+        <artifactId>filldb</artifactId>
+        <version>3</version>
+    </parent>
+
+    <artifactId>filldb-bobplugin</artifactId>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>The bob plugin for filldb.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.codemonstur</groupId>
+            <artifactId>filldb-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.codemonstur</groupId>
+            <artifactId>bobthebuildtool</artifactId>
+            <version>${version.library.bobthebuildtool}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.codemonstur</groupId>
+            <artifactId>jcli</artifactId>
+            <version>${version.library.jcli}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${version.plugin.jar}</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Bob-Plugin-Class>filldb.BobPlugin</Bob-Plugin-Class>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+

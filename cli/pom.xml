@@ -1,0 +1,44 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.codemonstur</groupId>
+        <artifactId>filldb</artifactId>
+        <version>3</version>
+    </parent>
+
+    <artifactId>filldb-cli</artifactId>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>The CLI for filldb.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.codemonstur</groupId>
+            <artifactId>filldb-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.codemonstur</groupId>
+            <artifactId>jcli</artifactId>
+            <version>${version.library.jcli}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${version.plugin.jar}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>filldb.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
