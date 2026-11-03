@@ -36,9 +36,22 @@
 
     <modules>
         <module>core</module>
-        <module>bobplugin</module>
         <module>cli</module>
     </modules>
+
+    <profiles>
+        <profile>
+            <id>bobplugin</id>
+            <activation>
+                <property>
+                    <name>!env.SKIP_BOBPLUGIN</name>
+                </property>
+            </activation>
+            <modules>
+                <module>bobplugin</module>
+            </modules>
+        </profile>
+    </profiles>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -102,4 +115,5 @@
     </build>
 
 </project>
+
 
