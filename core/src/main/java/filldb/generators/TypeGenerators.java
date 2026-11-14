@@ -16,8 +16,16 @@ import static java.lang.Math.round;
 import static java.lang.String.format;
 import static java.util.Map.entry;
 
+/**
+ * The {@code TypeGenerators} enum.
+ */
 public enum TypeGenerators {;
 
+    /**
+     * Returns the result of {@code newTypeGenerators}.
+     *
+     * @return the result
+     */
     public static Map<String, ValueGenerator> newTypeGenerators() {
         return Map.ofEntries
             ( entry("bigint", newBigIntGenerator())
@@ -29,12 +37,22 @@ public enum TypeGenerators {;
             );
     }
 
+    /**
+     * Returns the result of {@code newTextGenerator}.
+     *
+     * @return the result
+     */
     public static ValueGenerator newTextGenerator() {
         final Function<Column, Boolean> canGenerateFor = column -> "text".equals(column.dataType);
         return newValueGenerator("Fallback text", canGenerateFor, column ->
             (index, statement) -> statement.setString(index, LORUM_IPSUM));
     }
 
+    /**
+     * Returns the result of {@code newVarCharGenerator}.
+     *
+     * @return the result
+     */
     public static ValueGenerator newVarCharGenerator() {
         final Function<Column, Boolean> canGenerateFor = column -> "varchar".equals(column.dataType);
 
@@ -55,6 +73,11 @@ public enum TypeGenerators {;
         });
     }
 
+    /**
+     * Returns the result of {@code newIntGenerator}.
+     *
+     * @return the result
+     */
     public static ValueGenerator newIntGenerator() {
         final Function<Column, Boolean> canGenerateFor = column -> "int".equals(column.dataType);
         return newValueGenerator("Fallback int", canGenerateFor, column -> {
@@ -70,6 +93,11 @@ public enum TypeGenerators {;
         });
     }
 
+    /**
+     * Returns the result of {@code newBigIntGenerator}.
+     *
+     * @return the result
+     */
     public static ValueGenerator newBigIntGenerator() {
         final Function<Column, Boolean> canGenerateFor = column -> "bigint".equals(column.dataType);
         return newValueGenerator("Fallback bigint", canGenerateFor, column -> {
@@ -85,12 +113,22 @@ public enum TypeGenerators {;
         });
     }
 
+    /**
+     * Returns the result of {@code newBitGenerator}.
+     *
+     * @return the result
+     */
     public static ValueGenerator newBitGenerator() {
         final Function<Column, Boolean> canGenerateFor = column -> "bit".equals(column.dataType);
         return newValueGenerator("Fallback bit", canGenerateFor, column ->
             (index, statement) -> statement.setBoolean(index, isTrue(round(random()))));
     }
 
+    /**
+     * Returns the result of {@code newDecimalGenerator}.
+     *
+     * @return the result
+     */
     public static ValueGenerator newDecimalGenerator() {
         final Function<Column, Boolean> canGenerateFor = column -> "decimal".equals(column.dataType);
         return newValueGenerator("Fallback decimal", canGenerateFor, column ->

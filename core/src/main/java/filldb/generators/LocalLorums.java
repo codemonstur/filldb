@@ -8,8 +8,16 @@ import static filldb.core.Constants.LORUM_IPSUM;
 import static filldb.core.Util.*;
 import static java.util.Arrays.asList;
 
+/**
+ * The {@code LocalLorums} enum.
+ */
 public enum LocalLorums {;
 
+    /**
+     * Returns the result of {@code newRandomLocalIpsumGenerator}.
+     *
+     * @return the result
+     */
     public static Supplier<String> newRandomLocalIpsumGenerator() {
         final List<LorumIpsumGenerator> generators =
             asList( newDeLoreanIpsum(), newDoggoIpsum(), newMauiIpsum()
@@ -27,6 +35,11 @@ public enum LocalLorums {;
         };
     }
 
+    /**
+     * Returns the result of {@code newDeLoreanIpsum}.
+     *
+     * @return the result
+     */
     public static LorumIpsumGenerator newDeLoreanIpsum() {
         final List<String> movie = resourceToLines("/lorum/delorean.txt");
         return () -> {
@@ -40,6 +53,11 @@ public enum LocalLorums {;
         };
     }
 
+    /**
+     * Returns the result of {@code newDoggoIpsum}.
+     *
+     * @return the result
+     */
     public static LorumIpsumGenerator newDoggoIpsum() {
         final List<String> dogwords = resourceToLines("/lorum/doggo.txt");
         return () -> {
@@ -52,6 +70,11 @@ public enum LocalLorums {;
         };
     }
 
+    /**
+     * Returns the result of {@code newMauiIpsum}.
+     *
+     * @return the result
+     */
     public static LorumIpsumGenerator newMauiIpsum() {
         final String fishEnglish = resourceAsString("/lorum/maui-fish-english.txt");
         final String fishMaori = resourceAsString("/lorum/maui-fish-maori.txt");
@@ -65,6 +88,11 @@ public enum LocalLorums {;
         };
     }
 
+    /**
+     * Returns the result of {@code newRikerIpsum}.
+     *
+     * @return the result
+     */
     public static LorumIpsumGenerator newRikerIpsum() {
         final List<String> riker = resourceToLines("/lorum/riker.txt");
         return () -> {
@@ -77,11 +105,21 @@ public enum LocalLorums {;
         };
     }
 
+    /**
+     * Returns the result of {@code newSamuelJacksonIpsum}.
+     *
+     * @return the result
+     */
     public static LorumIpsumGenerator newSamuelJacksonIpsum() {
         final List<String> jackson = resourceToLines("/lorum/samuel-l-jackson.txt");
         return () -> randomItemFrom(jackson);
     }
 
+    /**
+     * Returns the result of {@code newFuzzAttacksIpsum}.
+     *
+     * @return the result
+     */
     public static LorumIpsumGenerator newFuzzAttacksIpsum() {
         final List<String> attacks = resourceToLines("/lists/all-attacks.txt");
         return () -> randomItemFrom(attacks);

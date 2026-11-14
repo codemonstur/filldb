@@ -20,8 +20,16 @@ import static filldb.core.Util.randomItemFrom;
 import static java.net.http.HttpClient.newHttpClient;
 import static java.util.Arrays.asList;
 
+/**
+ * The {@code RemoteLorums} enum.
+ */
 public enum RemoteLorums {;
 
+    /**
+     * Returns the result of {@code newRandomRemoteIpsumGenerator}.
+     *
+     * @return the result
+     */
     public static Supplier<String> newRandomRemoteIpsumGenerator() {
         final HttpClient client = newHttpClient();
         final List<LorumIpsumGenerator> generators =
@@ -51,6 +59,12 @@ public enum RemoteLorums {;
         };
     }
 
+    /**
+     * Returns the result of {@code newBibleIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newBibleIpsum(final HttpClient client) {
         return () -> toDocument("BibleIpsum", client,
             newBibleIpsumRequest()).select("#paragraphe").text();
@@ -70,6 +84,12 @@ public enum RemoteLorums {;
             .build();
     }
 
+    /**
+     * Returns the result of {@code newBluthIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newBluthIpsum(final HttpClient client) {
         return () -> toDocument("BluthIpsum", client,
             newBluthIpsumRequest()).select("#main").text();
@@ -81,6 +101,12 @@ public enum RemoteLorums {;
             .GET().build();
     }
 
+    /**
+     * Returns the result of {@code newCatIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newCatIpsum(final HttpClient client) {
         return () -> toDocument("CatIpsum", client,
             newCatIpsumRequest()).selectFirst(".body_text").text();
@@ -99,6 +125,12 @@ public enum RemoteLorums {;
             .build();
     }
 
+    /**
+     * Returns the result of {@code newCipIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newCipIpsum(final HttpClient client) {
         return () -> toDocument("CipIpsum", client,
             newCipIpsumRequest()).text();
@@ -119,6 +151,12 @@ public enum RemoteLorums {;
             .build();
     }
 
+    /**
+     * Returns the result of {@code newDalaIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newDalaIpsum(final HttpClient client) {
         return () -> toDocument("DalaIpsum", client,
             newDalaIpsumRequest()).text();
@@ -130,6 +168,12 @@ public enum RemoteLorums {;
             .GET().build();
     }
 
+    /**
+     * Returns the result of {@code newFuckIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newFuckIpsum(final HttpClient client) {
         return () -> toDocument("FuckIpsum", client,
             newFuckIpsumRequest()).selectFirst("#ta").text();
@@ -148,6 +192,12 @@ public enum RemoteLorums {;
             .build();
     }
 
+    /**
+     * Returns the result of {@code newHillBillyIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newHillBillyIpsum(final HttpClient client) {
         return () -> toDocument("HillBillyIpsum", client,
             newHillBillyIpsumRequest()).selectFirst("#clip").text();
@@ -159,6 +209,12 @@ public enum RemoteLorums {;
             .GET().build();
     }
 
+    /**
+     * Returns the result of {@code newITCrowdIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newITCrowdIpsum(final HttpClient client) {
         return () -> toDocument("ITCrowdIpsum", client,
             newITCrowdIpsumRequest()).select("section > p").text();
@@ -170,6 +226,12 @@ public enum RemoteLorums {;
             .GET().build();
     }
 
+    /**
+     * Returns the result of {@code newLegalIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newLegalIpsum(final HttpClient client) {
         return () -> toDocument("LegalIpsum", client,
             newLegalIpsumRequest()).select(".main-content > p").text();
@@ -181,6 +243,12 @@ public enum RemoteLorums {;
             .GET().build();
     }
 
+    /**
+     * Returns the result of {@code newOfficePhraseIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newOfficePhraseIpsum(final HttpClient client) {
         return () -> toDocument("OfficeIpsum", client,
             newOfficeIpsumRequest()).selectFirst(".body_text").text();
@@ -199,6 +267,12 @@ public enum RemoteLorums {;
             .build();
     }
 
+    /**
+     * Returns the result of {@code newOfficeClientPhraseIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newOfficeClientPhraseIpsum(final HttpClient client) {
         return () -> toDocument("OfficeClientIpsum", client,
             newOfficeClientPhraseIpsumRequest()).selectFirst(".body_text").text();
@@ -217,18 +291,48 @@ public enum RemoteLorums {;
             .build();
     }
 
+    /**
+     * Returns the result of {@code newCartoonDilbertIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newCartoonDilbertIpsum(final HttpClient client) {
         return newCartoonIpsum(client, "CartoonDilbertIpsum", "dilbert");
     }
+    /**
+     * Returns the result of {@code newCartoonAmericanDadIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newCartoonAmericanDadIpsum(final HttpClient client) {
         return newCartoonIpsum(client, "CartoonAmericanDadIpsum", "american dad");
     }
+    /**
+     * Returns the result of {@code newCartoonFamilyGuyIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newCartoonFamilyGuyIpsum(final HttpClient client) {
         return newCartoonIpsum(client, "CartoonFamilyGuyIpsum", "family guy");
     }
+    /**
+     * Returns the result of {@code newCartoonFuturamaIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newCartoonFuturamaIpsum(final HttpClient client) {
         return newCartoonIpsum(client, "CartoonFuturamaIpsum", "futurama");
     }
+    /**
+     * Returns the result of {@code newCartoonSimpsonsIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newCartoonSimpsonsIpsum(final HttpClient client) {
         return newCartoonIpsum(client, "CartoonSimpsonsIpsum", "simpsons");
     }
@@ -250,18 +354,48 @@ public enum RemoteLorums {;
             .build();
     }
 
+    /**
+     * Returns the result of {@code newSciFiBabylon5Ipsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newSciFiBabylon5Ipsum(final HttpClient client) {
         return newSciFiIpsum(client, "SciFiBabylon5Ipsum", "babylon5");
     }
+    /**
+     * Returns the result of {@code newSciFiBattlestarGallacticaIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newSciFiBattlestarGallacticaIpsum(final HttpClient client) {
         return newSciFiIpsum(client, "SciFiBattlestarGallacticaIpsum", "battlestargalactica");
     }
+    /**
+     * Returns the result of {@code newSciFiFireflyIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newSciFiFireflyIpsum(final HttpClient client) {
         return newSciFiIpsum(client, "SciFiFireflyIpsum", "firefly");
     }
+    /**
+     * Returns the result of {@code newSciFiStargateIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newSciFiStargateIpsum(final HttpClient client) {
         return newSciFiIpsum(client, "SciFiStargateIpsum", "stargate");
     }
+    /**
+     * Returns the result of {@code newSciFiStartrekIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newSciFiStartrekIpsum(final HttpClient client) {
         return newSciFiIpsum(client, "SciFiStartrekIpsum", "startrek");
     }
@@ -283,6 +417,12 @@ public enum RemoteLorums {;
             .build();
     }
 
+    /**
+     * Returns the result of {@code newWikiIpsum}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static LorumIpsumGenerator newWikiIpsum(final HttpClient client) {
         return () -> toDocument("WikiIpsum", client,
             newWikiIpsumRequest()).text();

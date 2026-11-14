@@ -12,8 +12,16 @@ import static filldb.FillDb.clearDatabase;
 import static filldb.FillDb.fillDatabase;
 import static jcli.CliParserBuilder.newCliParser;
 
+/**
+ * The {@code BobPlugin} enum.
+ */
 public enum BobPlugin {;
 
+    /**
+     * Performs the {@code installPlugin} operation.
+     *
+     * @param project the project
+     */
     public static void installPlugin(final Project project) {
         project.addCommand("filldb", "Runs filldb with the given arguments", BobPlugin::runFillDB);
     }

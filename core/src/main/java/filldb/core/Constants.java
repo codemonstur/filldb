@@ -1,7 +1,13 @@
 package filldb.core;
 
+/**
+ * The {@code Constants} enum.
+ */
 public enum Constants {;
 
+    /**
+     * The {@code LORUM_IPSUM} constant.
+     */
     public static final String LORUM_IPSUM =
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
         "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +

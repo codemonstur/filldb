@@ -13,6 +13,9 @@ import java.util.Map;
 
 import static java.lang.String.format;
 
+/**
+ * The {@code Schema} enum.
+ */
 public enum Schema {;
 
     private static final String SELECT_DATABASE = "SELECT DATABASE();";
@@ -29,6 +32,14 @@ public enum Schema {;
         "  TABLE_NAME = '%s';";
     private static final String SELECT_IDS = "SELECT %s FROM %s;";
 
+    /**
+     * Returns the result of {@code downloadSchema}.
+     *
+     * @param connection the connection
+     * @param skipTablesWithData the skip tables with data
+     * @return the result
+     * @throws SQLException if the operation fails
+     */
     public static List<Table> downloadSchema(final Connection connection, final boolean skipTablesWithData) throws SQLException {
         final List<Table> tables = new ArrayList<>();
 
@@ -65,6 +76,13 @@ public enum Schema {;
         }
     }
 
+    /**
+     * Returns the result of {@code listTableNames}.
+     *
+     * @param connection the connection
+     * @return the result
+     * @throws SQLException if the operation fails
+     */
     public static List<String> listTableNames(final Connection connection) throws SQLException {
         final List<String> names = new ArrayList<>();
 
@@ -158,6 +176,15 @@ public enum Schema {;
         return referencedColumn;
     }
 
+    /**
+     * Returns the result of {@code selectIds}.
+     *
+     * @param connection the connection
+     * @param table the table
+     * @param column the column
+     * @return the result
+     * @throws SQLException if the operation fails
+     */
     public static List<Long> selectIds(final Connection connection, final Table table, final Column column) throws SQLException {
         final List<Long> ids = new ArrayList<>();
         try (final var columns = connection.createStatement().executeQuery(format(SELECT_IDS, column.name, table.name))) {

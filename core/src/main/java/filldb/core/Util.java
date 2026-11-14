@@ -12,23 +12,57 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.Collections.emptyList;
 import static java.util.concurrent.TimeUnit.*;
 
+/**
+ * The {@code Util} enum.
+ */
 public enum Util {;
 
+    /**
+     * Returns the result of {@code randomInt}.
+     *
+     * @param maxValueExclusive the max value exclusive
+     * @return the result
+     */
     public static int randomInt(final int maxValueExclusive) {
         return (int) (random() * maxValueExclusive);
     }
 
+    /**
+     * Returns the result of {@code randomItemFrom}.
+     *
+     * @param <T> the type parameter
+     * @param list the list
+     * @return the result
+     */
     public static <T> T randomItemFrom(final List<T> list) {
         return list.get(randomInt(list.size()));
     }
 
+    /**
+     * Returns the result of {@code chance}.
+     *
+     * @param p the p
+     * @return the result
+     */
     public static long chance(final double p) {
         return random() < p ? 1 : 0;
     }
+    /**
+     * Returns the result of {@code isTrue}.
+     *
+     * @param chance the chance
+     * @return whether the condition holds
+     */
     public static boolean isTrue(final long chance) {
         return chance == 1;
     }
 
+    /**
+     * Returns the result of {@code substractSomeTime}.
+     *
+     * @param timestamp the timestamp
+     * @return the result
+     */
     public static long substractSomeTime(final long timestamp) {
         final long seconds = randomInt(60) * chance(0.9) * SECONDS.toMillis(1);
         final long minutes = randomInt(60) * chance(0.7) * MINUTES.toMinutes(1);
@@ -41,11 +75,24 @@ public enum Util {;
         return timestamp - seconds - minutes - hours - days - weeks - months - years;
     }
 
+    /**
+     * Returns the result of {@code subtractYears}.
+     *
+     * @param years the years
+     * @param timestamp the timestamp
+     * @return the result
+     */
     public static long subtractYears(final int years, final long timestamp) {
         return timestamp - (years * DAYS.toMillis(365));
     }
 
     private static final char[] hexArray = "0123456789abcdef".toCharArray();
+    /**
+     * Returns the result of {@code bytesToHex}.
+     *
+     * @param bytes the bytes
+     * @return the result
+     */
     public static String bytesToHex(final byte[] bytes) {
         char[] hexChars = new char[bytes.length * 2];
         for ( int j = 0; j < bytes.length; j++ ) {
@@ -56,6 +103,12 @@ public enum Util {;
         return new String(hexChars);
     }
 
+    /**
+     * Returns the result of {@code sha256}.
+     *
+     * @param value the value
+     * @return the result
+     */
     public static byte[] sha256(final String value) {
         try {
             final MessageDigest sha256 = MessageDigest.getInstance("SHA-256");
@@ -66,6 +119,12 @@ public enum Util {;
         }
     }
 
+    /**
+     * Returns the result of {@code sha1}.
+     *
+     * @param value the value
+     * @return the result
+     */
     public static byte[] sha1(final String value) {
         try {
             final MessageDigest sha1 = MessageDigest.getInstance("SHA-1");
@@ -76,6 +135,12 @@ public enum Util {;
         }
     }
 
+    /**
+     * Returns the result of {@code md5}.
+     *
+     * @param value the value
+     * @return the result
+     */
     public static byte[] md5(final String value) {
         try {
             final MessageDigest md5 = MessageDigest.getInstance("MD5");
@@ -86,11 +151,25 @@ public enum Util {;
         }
     }
 
+    /**
+     * Returns the result of {@code abbreviate}.
+     *
+     * @param input the input
+     * @param maxLength the max length
+     * @return the result
+     */
     public static String abbreviate(final String input, final int maxLength) {
         if (maxLength <= 3 || input == null || input.length() <= maxLength) return input;
         return input.substring(0, maxLength-4)+"... ";
     }
 
+    /**
+     * Returns the result of {@code insertText}.
+     *
+     * @param format the format
+     * @param filler the filler
+     * @return the result
+     */
     public static String insertText(final String format, final String filler) {
         final int length = countSubstring("%s", format);
         final Object[] input = new Object[length];
@@ -100,11 +179,24 @@ public enum Util {;
         return String.format(format, input);
     }
 
+    /**
+     * Returns the result of {@code countSubstring}.
+     *
+     * @param substring the substring
+     * @param input the input
+     * @return the result
+     */
     public static int countSubstring(final String substring, final String input) {
         final String temp = input.replace(substring, "");
         return (input.length() - temp.length()) / substring.length();
     }
 
+    /**
+     * Returns the result of {@code newSentence}.
+     *
+     * @param words the words
+     * @return the result
+     */
     public static String newSentence(final List<String> words) {
         final int numWords = randomInt(6) + 4;
         final List<String> chosen = new ArrayList<>(numWords);
@@ -117,21 +209,46 @@ public enum Util {;
         return String.join(" ", words) + ".";
     }
 
+    /**
+     * Returns the result of {@code capitalize}.
+     *
+     * @param input the input
+     * @return the result
+     */
     public static String capitalize(final String input) {
         if (input == null) return "";
         return input.substring(0, 1).toUpperCase() + input.substring(1);
     }
 
+    /**
+     * Returns the result of {@code toNumber}.
+     *
+     * @param input the input
+     * @return the result
+     */
     public static Long toNumber(final String input) {
         return Long.valueOf(input.replaceAll("[^0-9]+", ""));
     }
 
+    /**
+     * Returns the result of {@code hexHash}.
+     *
+     * @param value the value
+     * @param maxLength the max length
+     * @return the result
+     */
     public static String hexHash(final String value, final int maxLength) {
         if (maxLength >= 64) return bytesToHex(sha256(value));
         if (maxLength >= 40) return bytesToHex(sha1(value));
         return bytesToHex(md5(value));
     }
 
+    /**
+     * Returns the result of {@code resourceToLines}.
+     *
+     * @param resource the resource
+     * @return the result
+     */
     public static List<String> resourceToLines(final String resource) {
         try (final InputStream in = Util.class.getResourceAsStream(resource)) {
             if (in == null) throw new IOException("Resource " + resource + " does not exist.");
@@ -141,6 +258,14 @@ public enum Util {;
         }
     }
 
+    /**
+     * Returns the result of {@code streamToLines}.
+     *
+     * @param in the in
+     * @param charset the charset
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static List<String> streamToLines(final InputStream in, final Charset charset) throws IOException {
         final List<String> lines = new ArrayList<>();
         try (final BufferedReader reader  = new BufferedReader(new InputStreamReader(in, charset))) {
@@ -152,6 +277,12 @@ public enum Util {;
         return lines;
     }
 
+    /**
+     * Returns the result of {@code resourceAsString}.
+     *
+     * @param resource the resource
+     * @return the result
+     */
     public static String resourceAsString(final String resource) {
         try (final InputStream in = Util.class.getResourceAsStream(resource)) {
             if (in == null) throw new IOException("Resource " + resource + " does not exist.");
@@ -161,6 +292,14 @@ public enum Util {;
         }
     }
 
+    /**
+     * Returns the result of {@code streamAsString}.
+     *
+     * @param in the in
+     * @param charset the charset
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static String streamAsString(final InputStream in, final Charset charset) throws IOException {
         try (final ByteArrayOutputStream result = new ByteArrayOutputStream()) {
             final byte[] buffer = new byte[1024]; int read;
@@ -171,12 +310,26 @@ public enum Util {;
         }
     }
 
+    /**
+     * Returns the result of {@code resourceAsBytes}.
+     *
+     * @param resource the resource
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] resourceAsBytes(final String resource) throws IOException {
         try (final InputStream in = Util.class.getResourceAsStream(resource)) {
             return streamAsBytes(in);
         }
     }
 
+    /**
+     * Returns the result of {@code streamAsBytes}.
+     *
+     * @param in the in
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] streamAsBytes(final InputStream in) throws IOException {
         try (final ByteArrayOutputStream result = new ByteArrayOutputStream()) {
             final byte[] buffer = new byte[1024]; int read;

@@ -29,8 +29,21 @@ import static java.lang.String.format;
 import static java.lang.String.join;
 import static java.util.stream.Collectors.joining;
 
+/**
+ * The {@code Generate} enum.
+ */
 public enum Generate {;
 
+    /**
+     * Returns the result of {@code fillDatabase}.
+     *
+     * @param connection the connection
+     * @param tables the tables
+     * @param arguments the arguments
+     * @return the result
+     * @throws SQLException if the operation fails
+     * @throws NoSuchGenerator if the operation fails
+     */
     public static List<String> fillDatabase(final Connection connection, final List<Table> tables
             , final CliArguments arguments) throws SQLException, NoSuchGenerator {
 
@@ -177,6 +190,15 @@ public enum Generate {;
         throw new NoSuchGenerator(column.pattern);
     }
 
+    /**
+     * Returns the result of {@code generateInsertQueries}.
+     *
+     * @param connection the connection
+     * @param tables the tables
+     * @param arguments the arguments
+     * @return the result
+     * @throws SQLException if the operation fails
+     */
     public static List<String> generateInsertQueries(final Connection connection, final List<Table> tables
             , final CliArguments arguments) throws SQLException {
 

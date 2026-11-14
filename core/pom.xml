@@ -10,7 +10,6 @@
     <artifactId>filldb-core</artifactId>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Core logic of filldb.</description>
-
     <dependencies>
         <dependency>
             <groupId>com.github.codemonstur</groupId>

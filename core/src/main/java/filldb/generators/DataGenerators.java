@@ -24,8 +24,19 @@ import static java.lang.Math.random;
 import static java.lang.Math.round;
 import static java.lang.System.currentTimeMillis;
 
+/**
+ * The {@code DataGenerators} enum.
+ */
 public enum DataGenerators {;
 
+    /**
+     * Returns the result of {@code newDataGenerators}.
+     *
+     * @param allowHumor the allow humor
+     * @param allowRemote the allow remote
+     * @param allowNSFW the allow nsfw
+     * @return the result
+     */
     public static Map<String, ValueGenerator> newDataGenerators(final boolean allowHumor, final boolean allowRemote
             , final boolean allowNSFW) {
         final Map<String, ValueGenerator> map = new LinkedHashMap<>();

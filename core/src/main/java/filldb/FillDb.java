@@ -14,14 +14,30 @@ import static filldb.core.Schema.listTableNames;
 import static java.lang.String.join;
 import static java.util.stream.Collectors.toList;
 
+/**
+ * The {@code FillDb} enum.
+ */
 public enum FillDb {;
 
+    /**
+     * Performs the {@code clearDatabase} operation.
+     *
+     * @param arguments the arguments
+     * @throws SQLException if the operation fails
+     */
     public static void clearDatabase(final CliArguments arguments) throws SQLException {
         try (final Connection connection = connect(arguments.jdbcUrl, toDbDriverProperties(arguments))) {
             executeQueries(connection, toDeleteFromQueries(listTableNames(connection)));
         }
     }
 
+    /**
+     * Performs the {@code fillDatabase} operation.
+     *
+     * @param arguments the arguments
+     * @throws SQLException if the operation fails
+     * @throws NoSuchGenerator if the operation fails
+     */
     public static void fillDatabase(final CliArguments arguments) throws SQLException, NoSuchGenerator {
         try (final Connection connection = connect(arguments.jdbcUrl, toDbDriverProperties(arguments))) {
             final List<String> queries = Generate.fillDatabase(connection,
@@ -30,6 +46,13 @@ public enum FillDb {;
         }
     }
 
+    /**
+     * Returns the result of {@code listInsertQueries}.
+     *
+     * @param arguments the arguments
+     * @return the result
+     * @throws SQLException if the operation fails
+     */
     public static List<String> listInsertQueries(final CliArguments arguments) throws SQLException {
         try (final Connection connection = connect(arguments.jdbcUrl, toDbDriverProperties(arguments))) {
             return Generate.generateInsertQueries(connection,
@@ -37,6 +60,13 @@ public enum FillDb {;
         }
     }
 
+    /**
+     * Returns the result of {@code listDeleteQueries}.
+     *
+     * @param arguments the arguments
+     * @return the result
+     * @throws SQLException if the operation fails
+     */
     public static List<String> listDeleteQueries(final CliArguments arguments) throws SQLException {
         try (final Connection connection = connect(arguments.jdbcUrl, toDbDriverProperties(arguments))) {
             return toDeleteFromQueries(listTableNames(connection));

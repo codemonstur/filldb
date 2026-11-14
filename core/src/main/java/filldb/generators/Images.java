@@ -18,12 +18,33 @@ import static filldb.core.Util.*;
 import static java.net.http.HttpClient.newHttpClient;
 import static java.util.Arrays.asList;
 
+/**
+ * The {@code Images} enum.
+ */
 public enum Images {;
 
+    /**
+     * The {@code ImageGenerator} interface.
+     */
     public interface ImageGenerator {
+        /**
+         * Returns the result of {@code getImage}.
+         *
+         * @param client the client
+         * @return the result
+         * @throws IOException if the operation fails
+         */
         byte[] getImage(final HttpClient client) throws IOException;
     }
 
+    /**
+     * Returns the result of {@code newRandomImageGenerator}.
+     *
+     * @param allowRemote the allow remote
+     * @param allowHumor the allow humor
+     * @param allowNSFW the allow nsfw
+     * @return the result
+     */
     public static Supplier<byte[]> newRandomImageGenerator(final boolean allowRemote, final boolean allowHumor, final boolean allowNSFW) {
         final HttpClient client = newHttpClient();
         final List<ImageGenerator> remote =
@@ -57,11 +78,23 @@ public enum Images {;
         };
     }
 
+    /**
+     * Returns the result of {@code getKowalsky}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static byte[] getKowalsky(final HttpClient client) {
         try {
             return resourceAsBytes("/images/kowalski.png");
         } catch (IOException e) { return null; }
     }
+    /**
+     * Returns the result of {@code getUnderConstruction}.
+     *
+     * @param client the client
+     * @return the result
+     */
     public static byte[] getUnderConstruction(final HttpClient client) {
         try {
             return resourceAsBytes("/images/under-construction.jpg");
@@ -69,10 +102,27 @@ public enum Images {;
     }
 
 
+    /**
+     * The {@code PageParser} interface.
+     */
     public interface PageParser {
+        /**
+         * Returns the result of {@code extractImageLink}.
+         *
+         * @param document the document
+         * @return the result
+         * @throws IOException if the operation fails
+         */
         String extractImageLink(Document document) throws IOException;
     }
 
+    /**
+     * Returns the result of {@code getLifeLooselyBased}.
+     *
+     * @param client the client
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] getLifeLooselyBased(final HttpClient client) throws IOException {
         final String site = "LifeLooselyBased";
         // FIXME only some of the IDs between 1 and 200 lead to an image, we could list them all
@@ -86,6 +136,13 @@ public enum Images {;
             document -> toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
+    /**
+     * Returns the result of {@code getUserFriendly}.
+     *
+     * @param client the client
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] getUserFriendly(final HttpClient client) throws IOException {
         final String site = "UserFriendly";
         final String url = "http://www.userfriendly.org/";
@@ -96,6 +153,13 @@ public enum Images {;
             document -> toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
+    /**
+     * Returns the result of {@code getDilbert}.
+     *
+     * @param client the client
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] getDilbert(final HttpClient client) throws IOException {
         final String site = "Dilbert";
         final String url = "https://dilbert.com/";
@@ -106,6 +170,13 @@ public enum Images {;
                 document -> "https:" + toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
+    /**
+     * Returns the result of {@code getOglaf}.
+     *
+     * @param client the client
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] getOglaf(final HttpClient client) throws IOException {
         final String site = "Oglaf";
         final String url = "https://www.oglaf.com/";
@@ -121,6 +192,13 @@ public enum Images {;
             document -> toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
+    /**
+     * Returns the result of {@code getXkcd}.
+     *
+     * @param client the client
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] getXkcd(final HttpClient client) throws IOException {
         final String site = "XKCD";
         final String url = "https://xkcd.com/";
@@ -131,6 +209,13 @@ public enum Images {;
             document -> "https:" + toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
+    /**
+     * Returns the result of {@code getKopozky}.
+     *
+     * @param client the client
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] getKopozky(final HttpClient client) throws IOException {
         final String site = "Kopozky";
         final String url = "https://kopozky.net/";
@@ -146,6 +231,13 @@ public enum Images {;
         return thumbLink;
     }
 
+    /**
+     * Returns the result of {@code getOkCancel}.
+     *
+     * @param client the client
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] getOkCancel(final HttpClient client) throws IOException {
         final String site = "OkCancel";
         final int comicId = randomInt(178);
@@ -161,6 +253,13 @@ public enum Images {;
     // this code works in the sense that it gets the image, however the process fails
     // to end and hangs forever. I'm guessing some thread is still busy doing stuff, but
     // I don't know where or why
+    /**
+     * Returns the result of {@code getPennyArcade}.
+     *
+     * @param client the client
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] getPennyArcade(final HttpClient client) throws IOException {
         final String site = "PennyArcade";
         final String url = "https://www.penny-arcade.com/comic";
@@ -171,6 +270,13 @@ public enum Images {;
                 document -> toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
+    /**
+     * Returns the result of {@code getCommitStrip}.
+     *
+     * @param client the client
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] getCommitStrip(final HttpClient client) throws IOException {
         final String site = "CommitStrip";
         final int comicId = randomInt(59)+2;
@@ -197,6 +303,13 @@ public enum Images {;
     // this code works in the sense that it gets the image, however the process fails
     // to end and hangs forever. I'm guessing some thread is still busy doing stuff, but
     // I don't know where or why
+    /**
+     * Returns the result of {@code getMonkeyUser}.
+     *
+     * @param client the client
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] getMonkeyUser(final HttpClient client) throws IOException {
         final String site = "MonkeyUser";
         final String url = "https://www.monkeyuser.com/";
@@ -207,6 +320,13 @@ public enum Images {;
                 document -> toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
+    /**
+     * Returns the result of {@code getAbstruseGoose}.
+     *
+     * @param client the client
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] getAbstruseGoose(final HttpClient client) throws IOException {
         final String site = "AbstruseGoose";
         final String url = "https://abstrusegoose.com/";
@@ -217,6 +337,13 @@ public enum Images {;
                 document -> toImageLink(document, cssSelector, "src", imgPrefix)));
     }
 
+    /**
+     * Returns the result of {@code getPhdComics}.
+     *
+     * @param client the client
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     public static byte[] getPhdComics(final HttpClient client) throws IOException {
         final String site = "PhdComics";
         final String url = "http://phdcomics.com/";

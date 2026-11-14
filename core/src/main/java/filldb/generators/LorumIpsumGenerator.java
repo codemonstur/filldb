@@ -8,10 +8,24 @@ import static filldb.generators.RemoteLorums.*;
 import static java.net.http.HttpClient.newHttpClient;
 import static java.util.Map.entry;
 
+/**
+ * The {@code LorumIpsumGenerator} interface.
+ */
 public interface LorumIpsumGenerator {
 
+    /**
+     * Returns the ipsum.
+     *
+     * @return the result
+     * @throws IOException if the operation fails
+     */
     String getIpsum() throws IOException;
 
+    /**
+     * Returns the result of {@code newLorumIpsumGenerators}.
+     *
+     * @return the result
+     */
     static Map<String, LorumIpsumGenerator> newLorumIpsumGenerators() {
         final HttpClient client = newHttpClient();
         return Map.ofEntries
