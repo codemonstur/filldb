@@ -1,4 +1,4 @@
-include https://raw.githubusercontent.com/codemonstur/bobfiles/master/foss-lib-github-maven
+include https://raw.githubusercontent.com/codemonstur/bobfiles/master/foss-lib-github
 
 vendor: com.github.codemonstur
 version: 4

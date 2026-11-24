@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: help clean build test validate release-notes deploy coverage mutation
+.PHONY: help clean build test validate release-notes deploy coverage mutation qodana
 
 NAME=`xmllint --xpath "//project/artifactId/text()" pom.xml`
 VERSION=`xmllint --xpath "//project/version/text()" pom.xml`
@@ -47,6 +47,19 @@ validate: ## Check dependency versions, cves, licenses, javadoc, and code qualit
 	@mvn validate -P codequality
 	@mvn -DskipTests javadoc:aggregate
 
+qodana: ## Run Qodana static analysis and report
+	@mkdir -p target/qodana
+	@NO_COLOR=1 NONINTERACTIVE=1 qodana scan --linter qodana-jvm-community --print-problems --save-report --results-dir target/qodana --disable-update-checks > target/qodana/qodana.log 2>&1; \
+	status=$$?; \
+	if [ $$status -ne 0 ]; then \
+		echo "Qodana failed (exit $$status); see target/qodana/qodana.log and target/qodana/report/index.html"; \
+		tail -n 50 target/qodana/qodana.log; \
+		exit $$status; \
+	fi; \
+	count=$$(jq '[.runs[].results[]] | length' target/qodana/qodana.sarif.json) || { echo "Could not read target/qodana/qodana.sarif.json"; exit 1; }; \
+	jq -r '.runs[].results[] | "[WARNING] " + (.ruleId // "qodana") + ": " + ((.message.text // "") | gsub("\\s+"; " ")) + " (" + ((.locations[0].physicalLocation.artifactLocation.uri // "unknown") | sub("^file://"; "")) + ":" + ((.locations[0].physicalLocation.region.startLine // 0) | tostring) + ")"' target/qodana/qodana.sarif.json; \
+	echo "Qodana report: target/qodana/report/index.html ($$count problem(s))"
+
 release-notes: ## Write release notes in src/docs/releases for the current version
 	@mkdir -p src/docs/releases
 	@$(INFO) "Writing release notes to src/docs/releases/release-$(VERSION).txt"
@@ -54,14 +67,14 @@ release-notes: ## Write release notes in src/docs/releases for the current versi
 	@echo "" >> src/docs/releases/release-$(VERSION).txt
 	@git log --pretty="%s" $(PREVIOUS_TAG)... master >> src/docs/releases/release-$(VERSION).txt
 
-deploy: ## Clean, build and deploy a version to Github and Maven Central
+deploy: ## Clean, build and deploy a version to Github
 	@if [ ! -f src/docs/releases/release-$(VERSION).txt ]; then \
 		$(INFO) "Release notes not found: src/docs/releases/release-$(VERSION).txt" >&2; \
 		$(INFO) "Write the release notes by hand before deploying." >&2; \
 		exit 1; \
 	fi
-	@$(INFO) "Uploading to maven central"
-	@mvn clean deploy
+	@$(INFO) "Building"
+	@mvn clean package
 	@$(INFO) "Creating github release"
 	@gh release create $(NAME)-$(VERSION) \
 		cli/target/filldb-cli-$(VERSION).jar \
